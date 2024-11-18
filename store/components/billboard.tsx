@@ -14,12 +14,12 @@ const Billboard: React.FC<BillboardProps> = ({ data }) => {
                     style={{ backgroundImage: `url(${data?.imageUrl})` }}
                 />
                 
-                {/* Overlay */}
-                <div className='absolute inset-0 bg-black/30 z-10' />
+                {/* Overlay with reduced opacity */}
+                <div className='absolute inset-0 bg-black/20 z-10' /> {/* Reduced opacity */}
 
-                {/* Content */}
-                <div className='relative z-20 flex flex-col items-center justify-center w-full h-full text-center gap-y-8'>
-                    <div className='max-w-xs text-3xl text-white font-bold sm:text-5xl lg:text-6xl sm:max-w-xl'>
+                {/* Content with reduced z-index for the label */}
+                <div className='relative z-5 flex flex-col items-center justify-center w-full h-full text-center gap-y-8'>
+                    <div className='max-w-xs text-3xl text-[#994C00] font-bold sm:text-5xl lg:text-6xl sm:max-w-xl'>
                         {data?.label}
                     </div>
                 </div>
