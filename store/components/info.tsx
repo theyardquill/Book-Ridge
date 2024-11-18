@@ -28,11 +28,11 @@ const Info: React.FC<InfoProps> = ({ data }) => {
             <hr className="my-4" />
             <div className="flex flex-col gap-y-6">
                 <div className="flex items-center gap-x-4">
-                    <h3 className="font-semibold text-black">Size:</h3>
+                    <h3 className="font-semibold text-black">Number of Passengers</h3>
                     <div>{data?.size?.value}</div>
                 </div>
                 <div className="flex items-center gap-x-4">
-                    <h3 className="font-semibold text-black">Color:</h3>
+                    <h3 className="font-semibold text-black">Vehicle:</h3>
                     <div
                         className="w-6 h-6 border border-gray-600 rounded-full"
                         style={{ backgroundColor: data?.color?.value }}
