@@ -10,21 +10,21 @@ const Navbar = async () => {
     const categories = await getCategories();
 
     return (
-        <nav className="bg-white shadow shadow-gray-300 w-full px-8 md:px-4">
+        <nav className="bg-white shadow shadow-gray-300 w-full px-4 md:px-8">
             <Container>
-                <div className="md:h-16 h-28 mx-auto md:px-4 container flex items-center justify-between flex-wrap md:flex-nowrap">
+                <div className="h-auto md:h-16 mx-auto container flex items-center justify-between flex-wrap md:flex-nowrap gap-y-4 xs:gap-y-2">
                     {/* Branding */}
-                    <Link href="/" className="text-[#994C00] md:order-1 flex items-center">
-                        <p className="text-xl font-bold">Cabimah Adventures</p>
+                    <Link href="/" className="text-[#994C00] flex items-center flex-1 md:flex-none">
+                        <p className="text-lg sm:text-xl font-bold">Cabimah Adventures</p>
                     </Link>
-                    
+
                     {/* Navigation Links */}
-                    <div className="text-[#556B2F] text-lg font-bold order-3 w-full md:w-auto md:order-2">
-                        <MainNav data={categories || []} />
+                    <div className="w-full md:w-auto flex-1 md:flex-none xs:flex-col xs:gap-y-2 md:flex-row">
+                        <MainNav data={categories || []} className="text-[#556B2F] text-base sm:text-lg font-bold" />
                     </div>
 
                     {/* Actions */}
-                    <div className="order-2 text-md md:order-3">
+                    <div className="flex-1 md:flex-none flex justify-end xs:justify-center">
                         <NavbarActions />
                     </div>
                 </div>
