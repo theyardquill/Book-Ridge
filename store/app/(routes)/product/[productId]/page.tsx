@@ -23,8 +23,8 @@ const ProductPage = async ({ params }: { params: Params }) => {
                             <Info data={product} />
                         </div>
                     </div>
-                    <hr className="my-10"/>
-                    <ProductList title="Related Items" items={suggestProducts} />
+                    <hr className="my-10 text-[#994C00]"/>
+                    <ProductList title="Related Safaris" items={suggestProducts} />
                 </div>
             </Container>
         </div>
