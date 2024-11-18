@@ -40,11 +40,10 @@ const Info: React.FC<InfoProps> = ({ data }) => {
                     <div>{data?.size?.value || "N/A"}</div>
                 </div>
 
-                {/* Vehicle Color */}
+                {/* Vehicle */}
                 <div className="flex items-center gap-x-4">
                     <h3 className="font-semibold text-black">Vehicle:</h3>
-                    <div className="w-6 h-6 rounded-full border border-gray-300"/>
-                    <span>{data?.color?.name || "N/A"}</span>
+                    <div>{data?.color?.name || "N/A"}</div>
                 </div>
             </div>
 
