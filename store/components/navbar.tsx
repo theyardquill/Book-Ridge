@@ -20,7 +20,7 @@ const Navbar = async () => {
 
                     {/* Navigation Links */}
                     <div className="w-full md:w-auto flex-1 md:flex-none xs:flex-col xs:gap-y-2 md:flex-row">
-                        <MainNav data={categories || []} className="text-[#556B2F] text-base sm:text-lg font-bold" />
+                        <MainNav data={categories || []} className="text-base sm:text-lg font-bold" />
                     </div>
 
                     {/* Actions */}
