@@ -19,7 +19,7 @@ const Navbar = async () => {
                     </Link>
                     
                     {/* Navigation Links */}
-                    <div className="text-gray-500 text-md order-3 w-full md:w-auto md:order-2">
+                    <div className="text-[#556B2F] text-lg font-bold order-3 w-full md:w-auto md:order-2">
                         <MainNav data={categories || []} />
                     </div>
 
