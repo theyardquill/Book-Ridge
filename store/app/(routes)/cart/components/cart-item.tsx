@@ -35,12 +35,12 @@ const CartItem: React.FC<CartItemProps> = ({ data }) => {
                 </div>
                 <div className='relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0'>
                     <div className='flex justify-between'>
-                        <p className='text-lg font-semibold text-black'>
+                        <p className='text-lg font-semibold text-[#994C00]'>
                             {data.name}
                         </p>
                     </div>
                     <div className='flex mt-1 text-sm'>
-                        <p className='text-gray-500'>{data.color.name}</p>
+                        <p className='text-[#556B2F]'>{data.color.name}</p>
                         <p className='pl-4 ml-4 text-gray-500 border-l border-gray-200'>{data.size.name}</p>
                     </div>
                     <Currency value={data.price} />
