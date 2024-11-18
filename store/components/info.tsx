@@ -19,7 +19,7 @@ const Info: React.FC<InfoProps> = ({ data }) => {
 
     return (
         <div>
-            <h1 className="text-3xl font-bold text-gray-900">{data.name}</h1>
+            <h1 className="text-3xl font-bold text-[#994C00]">{data.name}</h1>
             <div className="flex items-end justify-between mt-3">
                 <p className="text-2xl text-gray-900">
                     <Currency value={data?.price} />
@@ -40,7 +40,7 @@ const Info: React.FC<InfoProps> = ({ data }) => {
                 </div>
             </div>
             <div className="flex items-center mt-10 gap-x-4">
-                <Button onClick={onAddToCart} className="flex items-center gap-x-2">
+                <Button onClick={onAddToCart} className="flex items-center text-[#556B2F] gap-x-2">
                     Book this Package
                     <ShoppingCart />
                 </Button>
