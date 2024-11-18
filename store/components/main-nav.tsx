@@ -1,6 +1,11 @@
+import Link from 'next/link'; // Import Link from next/link
+import { cn } from '@/lib/utils'; // Assuming cn is a utility for conditional classNames
+import { usePathname } from 'next/navigation';
+import { Category } from '@/types'; // Assuming Category is properly defined in types
+
 interface MainNavProps {
     data: Category[] | [];
-    className?: string;  // Allow className to be passed in
+    className?: string; // Allow className to be passed in
 }
 
 const MainNav: React.FC<MainNavProps> = ({ data, className }) => {
