@@ -19,28 +19,46 @@ const Info: React.FC<InfoProps> = ({ data }) => {
 
     return (
         <div>
+            {/* Product Name */}
             <h1 className="text-3xl font-bold text-[#994C00]">{data.name}</h1>
+
+            {/* Price */}
             <div className="flex items-end justify-between mt-3">
                 <p className="text-2xl text-gray-900">
                     <Currency value={data?.price} />
                 </p>
             </div>
+
+            {/* Divider */}
             <hr className="my-4" />
+
+            {/* Details */}
             <div className="flex flex-col gap-y-6">
+                {/* Passengers */}
                 <div className="flex items-center gap-x-4">
                     <h3 className="font-semibold text-black">Number of Passengers</h3>
-                    <div>{data?.size?.value}</div>
+                    <div>{data?.size?.value || "N/A"}</div>
                 </div>
+
+                {/* Vehicle Color */}
                 <div className="flex items-center gap-x-4">
                     <h3 className="font-semibold text-black">Vehicle:</h3>
                     <div
-                        className="w-6 h-6 text-[#556B2F]"
-                        {data?.color?.name}
+                        className="w-6 h-6 rounded-full border border-gray-300"
+                        style={{
+                            backgroundColor: data?.color?.value || "transparent",
+                        }}
                     />
+                    <span>{data?.color?.name || "N/A"}</span>
                 </div>
             </div>
+
+            {/* Book Button */}
             <div className="flex items-center mt-10 gap-x-4">
-                <Button onClick={onAddToCart} className="flex bg-[#556B2F] items-center text-white gap-x-2">
+                <Button
+                    onClick={onAddToCart}
+                    className="flex bg-[#556B2F] items-center text-white gap-x-2"
+                >
                     Book this Package
                     <ShoppingCart />
                 </Button>
