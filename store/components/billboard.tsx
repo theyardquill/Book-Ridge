@@ -15,7 +15,7 @@ const Billboard: React.FC<BillboardProps> = ({ data }) => {
                 />
                 
                 {/* Overlay with reduced opacity */}
-                <div className='absolute inset-0 bg-black/20 z-10' /> {/* Reduced opacity */}
+                <div className='absolute inset-0 bg-black/60 z-10' /> {/* Reduced opacity */}
 
                 {/* Content with reduced z-index for the label */}
                 <div className='relative z-5 flex flex-col items-center justify-center w-full h-full text-center gap-y-8'>
