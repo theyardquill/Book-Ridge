@@ -55,15 +55,15 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
             </div>
             {/* Description */}
             <div>
-                <p className="text-lg font-semibold">
+                <p className="text-lg font-semibold text-[#994C00]">
                     {data?.name}
                 </p>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-[#556B2F] text-gray-500">
                     {data.category.name}
                 </p>
             </div>
             {/* Price */}
-            <div className="flex items-center justify-between">
+            <div className="flex items-center text-[#994C00] justify-between">
                 <Currency value={data?.price} />
             </div>
         </div>
