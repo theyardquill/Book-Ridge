@@ -43,12 +43,7 @@ const Info: React.FC<InfoProps> = ({ data }) => {
                 {/* Vehicle Color */}
                 <div className="flex items-center gap-x-4">
                     <h3 className="font-semibold text-black">Vehicle:</h3>
-                    <div
-                        className="w-6 h-6 rounded-full border border-gray-300"
-                        style={{
-                            backgroundColor: data?.color?.value || "transparent",
-                        }}
-                    />
+                    <div className="w-6 h-6 rounded-full border border-gray-300"/>
                     <span>{data?.color?.name || "N/A"}</span>
                 </div>
             </div>
