@@ -1,4 +1,3 @@
-"use client"
 import React from 'react'
 import { auth } from '@clerk/nextjs/server'
 import { UserButton } from '@clerk/nextjs';
