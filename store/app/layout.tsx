@@ -8,8 +8,8 @@ import ToastProvider from '@/providers/toast-provider'
 const urban = Urbanist({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'stoe',
-  description: 'store',
+  title: 'Store',
+  description: 'Store',
 }
 
 export default function RootLayout({
