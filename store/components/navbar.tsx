@@ -15,7 +15,7 @@ const Navbar = async () => {
                 <div className="h-auto md:h-16 mx-auto container flex items-center justify-between flex-wrap md:flex-nowrap gap-y-4 xs:gap-y-2">
                     {/* Branding */}
                     <Link href="/" className="text-[#994C00] flex items-center flex-1 md:flex-none">
-                        <p className="text-lg sm:text-xl font-bold">Cabimah Adventures</p>
+                        <p className="text-md sm:text-md font-bold">Cabimah Adventures</p>
                     </Link>
 
                     {/* Navigation Links */}
