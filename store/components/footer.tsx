@@ -3,7 +3,7 @@ const Footer = () => {
         <footer className="bg-white border-t">
             <div className="py-10 mx-auto">
                 <p className="text-xs text-center text-black">
-                    &copy; 2024 Abimah Adventures, Inc. All rights reserved.
+                    &copy; 2024 Cabimah Adventures. All rights reserved.
                 </p>
             </div>
         </footer>

@@ -17,11 +17,11 @@ const useCart = create(persist<CartStore>((set, get) =>({
         const existingItem = currentItems.find(item => item.id === data.id);
 
         if(existingItem) {
-            return toast("Item already in cart.");
+            return toast("Tour Package Already Added To Cart!");
         }
 
         set({ items: [...get().items, data] })
-        toast.success("Item added to cart.")
+        toast.success("Tour Package Added to Cart Successfully!")
     },
     removeItem: (id: string) => {
         set({ items: [...get().items.filter(item => item.id !== id)] });

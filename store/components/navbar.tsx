@@ -10,17 +10,27 @@ const Navbar = async () => {
     const categories = await getCategories();
 
     return (
-        <div className="border-b">
+        <nav className="bg-white shadow shadow-gray-300 w-full px-4 md:px-8">
             <Container>
-                <div className="relative flex items-center h-16 px-4 sm:px-6 lg:px-8">
-                    <Link href="/" className="flex ml-4 lg:ml-0 gap-x-2">
-                        <p className="text-xl font-bold">Abimah Adventures</p>
+                <div className="h-auto md:h-16 mx-auto container flex items-center justify-between flex-wrap md:flex-nowrap gap-y-4 xs:gap-y-2">
+                    {/* Branding */}
+                    <Link href="/" className="text-[#994C00] flex items-center flex-1 md:flex-none">
+                        <p className="text-md sm:text-md font-bold">Cabimah Adventures</p>
                     </Link>
-                    <MainNav data={categories || []} />
-                    <NavbarActions />
+
+                    {/* Navigation Links */}
+                    <div className="w-full md:w-auto flex-1 md:flex-none xs:flex-col xs:gap-y-2 md:flex-row">
+                        <MainNav data={categories || []} />
+                    </div>
+
+                    {/* Actions */}
+                    <div className="flex-1 md:flex-none flex justify-end xs:justify-center">
+                        <NavbarActions />
+                    </div>
                 </div>
             </Container>
-        </div>
-    )
-}
+        </nav>
+    );
+};
+
 export default Navbar;
