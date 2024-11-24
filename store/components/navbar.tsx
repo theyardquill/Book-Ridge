@@ -3,6 +3,7 @@ import Link from "next/link";
 import { MainNav } from "@/components";
 import getCategories from "@/actions/get-categories";
 import NavbarActions from "./navbar-actions";
+import Image from "next/image";
 
 export const revalidate = 0;
 
@@ -14,8 +15,17 @@ const Navbar = async () => {
             <Container>
                 <div className="md:h-16 h-28 mx-auto md:px-4 container flex items-center justify-between flex-wrap md:flex-nowrap">
                     {/* Branding */}
-                    <Link href="/" className="text-[#994C00] md:order-1 flex -ml-4 items-center">
-                        <p className="text-xl md:text-lg font-bold">Cabimah Adventures</p>
+                    <Link href="/" className="text-[#994C00] md:order-1 flex items-center space-x-1 -ml-6">
+                        {/* Logo */}
+                        <Image
+    src="/Logo.png" // Path to your logo
+    alt="Cabimah Adventures Logo"
+    width={60} // Base width
+    height={60} // Base height
+    className=" sm:w-14 sm:h-14 md:w-20 md:h-20 lg:w-24 lg:h-24" // Responsive sizes
+/>
+
+                        <p className="text-lg md:text-xl font-bold">Cabimah Adventures</p>
                     </Link>
 
                     {/* Navigation Links */}
@@ -24,7 +34,7 @@ const Navbar = async () => {
                     </div>
 
                     {/* Actions */}
-                    <div className="order-2 -mr-4 text-md md:order-3">
+                    <div className="order-2  md:order-3">
                         <NavbarActions />
                     </div>
                 </div>
