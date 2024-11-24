@@ -10,7 +10,7 @@ const Navbar = async () => {
     const categories = await getCategories();
 
     return (
-        <nav className="bg-white shadow-lg border-b border-[#994C00] shadow-[#994C00] w-full px-8 md:px-4">
+        <nav className="bg-white shadow-md border-b border-[#994C00] shadow-[#994C00] w-full px-8 md:px-4">
             <Container>
                 <div className="md:h-16 h-28 mx-auto md:px-4 container flex items-center justify-between flex-wrap md:flex-nowrap">
                     {/* Branding */}
