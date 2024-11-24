@@ -24,9 +24,9 @@ const Info: React.FC<InfoProps> = ({ data }) => {
 
             {/* Price */}
             <div className="flex items-end justify-between mt-3">
-                <p className="text-md text-gray-900">
+                <span className="text-md text-gray-900">
                     <Currency value={data?.price} />
-                </p>
+                </span>
             </div>
 
             {/* Divider */}
