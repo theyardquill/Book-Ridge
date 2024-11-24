@@ -21,7 +21,7 @@ const useCart = create(persist<CartStore>((set, get) =>({
         }
 
         set({ items: [...get().items, data] })
-        toast.success("Tour Package Added to Cart Successfully!")
+        toast.success("Tour Package Added to Your Bookings Successfully! Click on the Bookings Button To Confirm it")
     },
     removeItem: (id: string) => {
         set({ items: [...get().items.filter(item => item.id !== id)] });
