@@ -24,7 +24,7 @@ const MainNav: React.FC<MainNavProps> = ({ data }) => {
                     key={route.href}
                     href={route.href}
                     className={cn(
-                        'text-md sm:text-sm-custom md:text-md-custom lg:text-lg-custom xl:text-xl-custom font-bold transition-colors hover:text-[#994C00] relative before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-0 before:h-[2px] before:bg-[#994C00] hover:before:w-full hover:transition-all hover:duration-5000 hover:ease-in-out',
+                        'text-[0.75rem] sm:text-sm-custom md:text-md-custom lg:text-lg-custom xl:text-xl-custom font-bold transition-colors hover:text-[#994C00] relative before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-0 before:h-[2px] before:bg-[#994C00] hover:before:w-full hover:transition-all hover:duration-5000 hover:ease-in-out',
                         route.active ? 'text-[#994C00]' : 'text-[#556B2F]'
                     )}
                     
