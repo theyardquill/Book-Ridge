@@ -25,7 +25,7 @@ const Navbar = async () => {
                         className="w-16 h-16 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-18 lg:h-18" // Responsive sizes
                     />
 
-                        <p className="text-lg md:text-xl -ml-12 -mr-12 font-bold">Cabimah Adventures</p>
+                        <p className="text-md md:text-lg lg:text-xl -ml-12 -mr-12 font-bold">Cabimah Adventures</p>
                     </Link>
 
                     {/* Navigation Links */}

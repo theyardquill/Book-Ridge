@@ -25,7 +25,7 @@ const NavbarActions = () => {
                 onClick={() => router.push("/cart")}>
                 <ShoppingBag size={20} color='white' />
                 <span className='ml-1 text-[0.75rem] font-medium text-white'>
-                  My Trips: {cart?.items?.length}
+                  Trips: {cart?.items?.length}
                 </span>
             </Button>
         </div>
