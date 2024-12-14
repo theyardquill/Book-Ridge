@@ -18,7 +18,7 @@ const Navbar = async () => {
                     <Link href="/" className="text-[#994C00] md:order-1 flex items-center space-x-1 -ml-6">
                         {/* Logo */}
                         <Image
-                        src="/Logo2.png" // Path to your logo
+                        src="/Logo.png" // Path to your logo
                         alt="Cabimah Adventures Logo"
                         width={120} // Base width
                         height={120} // Base height
