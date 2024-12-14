@@ -9,8 +9,8 @@ import Head from 'next/head'
 const urban = Urbanist({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Store',
-  description: 'Store',
+  title: 'Cabimah Adventures Limited',
+  description: 'Easily Book Safaris, Tours and Road Trips',
 }
 
 export default function RootLayout({

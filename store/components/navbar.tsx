@@ -18,14 +18,14 @@ const Navbar = async () => {
                     <Link href="/" className="text-[#994C00] md:order-1 flex items-center space-x-1 -ml-6">
                         {/* Logo */}
                         <Image
-    src="/Logo.png" // Path to your logo
-    alt="Cabimah Adventures Logo"
-    width={60} // Base width
-    height={60} // Base height
-    className=" sm:w-14 sm:h-14 md:w-20 md:h-20 lg:w-24 lg:h-24" // Responsive sizes
-/>
+                        src="/Logo2.png" // Path to your logo
+                        alt="Cabimah Adventures Logo"
+                        width={120} // Base width
+                        height={120} // Base height
+                        className="w-16 h-16 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-18 lg:h-18" // Responsive sizes
+                    />
 
-                        <p className="text-lg md:text-xl font-bold">Cabimah Adventures</p>
+                        <p className="text-lg md:text-xl -ml-12 -mr-12 font-bold">Cabimah Adventures</p>
                     </Link>
 
                     {/* Navigation Links */}
