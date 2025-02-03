@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Product } from "@/types";
 import Image from "next/image";
@@ -10,6 +10,7 @@ import PreviewModal from './../preview-modal';
 import usePreviewModal from "@/hooks/use-preview-modal";
 import { MouseEventHandler } from 'react';
 import useCart from "@/hooks/use-cart";
+import WhatsAppIcon from "@/components/icons/whatsapp-icon"; // Import your WhatsApp icon
 
 interface ProductCard {
     data: Product;
@@ -19,21 +20,31 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
     const cart = useCart();
     const previewModal = usePreviewModal();
     const router = useRouter();
+
     const handleClick = () => {
-        router.push(`/product/${data?.id}`)
-    }
+        router.push(`/product/${data?.id}`);
+    };
 
     const onPreview: MouseEventHandler<HTMLButtonElement> = (event) => {
         event.stopPropagation();
         previewModal.onOpen(data);
-    }
+    };
 
     const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
         event.stopPropagation();
         cart.addItem(data);
-    }
+    };
 
-    return ( 
+    const onShareViaWhatsApp: MouseEventHandler<HTMLButtonElement> = (event) => {
+        event.stopPropagation();
+        const productUrl = `${window.location.origin}/product/${data?.id}`; // Construct the product URL
+        const message = `Hello, I am interested in this Safari Tour: ${data?.name} (${productUrl}). Could you provide more details?`; // Custom enquiry message
+        const phoneNumber = "+254113977338"; // Recipient's phone number
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`; // Create the WhatsApp share link
+        window.open(whatsappUrl, '_blank'); // Open the link in a new tab
+    };
+
+    return (
         <div onClick={handleClick} className="p-3 space-y-4 bg-white border cursor-pointer group rounded-xl">
             {/* Images and Actions */}
             <div className="relative bg-gray-100 aspect-square rounded-xl">
@@ -41,15 +52,22 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
                     fill
                     src={data?.images?.[0]?.url}
                     alt="Images"
-                    className="object-cover rounded-md aspect-square" />
+                    className="object-cover rounded-md aspect-square"
+                />
                 <div className="absolute w-full px-6 transition opacity-0 group-hover:opacity-100 bottom-5">
                     <div className="flex justify-center gap-x-6">
                         <IconButton
                             onClick={onPreview}
-                            icon={<Expand size={20} className="text-gray-600" />}/>
+                            icon={<Expand size={20} className="text-gray-600" />}
+                        />
                         <IconButton
                             onClick={onAddToCart}
-                            icon={<ShoppingCart size={20} className="text-gray-600" />}/>
+                            icon={<ShoppingCart size={20} className="text-gray-600" />}
+                        />
+                        <IconButton
+                            onClick={onShareViaWhatsApp}
+                            icon={<WhatsAppIcon size={24} className="text-gray-600" />} // Set size to 20
+                        />
                     </div>
                 </div>
             </div>
@@ -68,6 +86,6 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
             </div>
         </div>
     );
-}
+};
 
 export default ProductCard;
