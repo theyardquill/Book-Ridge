@@ -39,7 +39,7 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
         event.stopPropagation();
         const productUrl = `${window.location.origin}/product/${data?.id}`; // Construct the product URL
         const message = `Hello, I am interested in this Safari Tour: ${data?.name} (${productUrl}). Could you provide more details?`; // Custom enquiry message
-        const phoneNumber = "+254113977338"; // Recipient's phone number
+        const phoneNumber = "+254114633881"; // Recipient's phone number
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`; // Create the WhatsApp share link
         window.open(whatsappUrl, '_blank'); // Open the link in a new tab
     };
