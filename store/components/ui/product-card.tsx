@@ -66,7 +66,7 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
                         />
                         <IconButton
                             onClick={onShareViaWhatsApp}
-                            icon={<WhatsAppIcon size={24} className="text-gray-600" />} // Set size to 20
+                            icon={<WhatsAppIcon size={26} className="text-gray-600" />} // Set size to 20
                         />
                     </div>
                 </div>
