@@ -5,121 +5,95 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  
 }
-
-/// STORE
 
 model Store {
-  id        String      @id @default(cuid())
-  name      String
-  userId    String
-
-  billboards  Billboard[]
-  books       Book[]
-  durations   Duration[]
-  grades      Grade[]
-  pathways    Pathway[]
-  orders      Order[]
-
-  createdAt   DateTime    @default(now())
-  updatedAt   DateTime    @updatedAt
+  id         String      @id @default(cuid())
+  name       String
+  userId     String
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+  billboards Billboard[]
+  books      Book[]
+  durations  Duration[]
+  grades     Grade[]
+  orders     Order[]
+  pathways   Pathway[]
 }
 
-/// BILLBOARD
-
 model Billboard {
-  id         String     @id @default(cuid())
-  storeId    String
-  label      String
-  imageUrl   String
-
-  store      Store      @relation(fields: [storeId], references: [id], onDelete: Cascade)
-  pathways   Pathway[]
-
-  createdAt  DateTime   @default(now())
-  updatedAt  DateTime   @updatedAt
+  id        String    @id @default(cuid())
+  storeId   String
+  label     String
+  imageUrl  String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  store     Store     @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  pathways  Pathway[]
 
   @@index([storeId])
 }
 
-/// PATHWAY
-
 model Pathway {
-  id          String      @id @default(cuid())
+  id          String    @id @default(cuid())
   storeId     String
   billboardId String
   name        String
-
-  store       Store       @relation(fields: [storeId], references: [id], onDelete: Cascade)
-  billboard   Billboard   @relation(fields: [billboardId], references: [id], onDelete: Cascade)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
   books       Book[]
-
-  createdAt   DateTime    @default(now())
-  updatedAt   DateTime    @updatedAt
+  billboard   Billboard @relation(fields: [billboardId], references: [id], onDelete: Cascade)
+  store       Store     @relation(fields: [storeId], references: [id], onDelete: Cascade)
 
   @@index([storeId])
   @@index([billboardId])
 }
 
-/// DURATION
-
 model Duration {
-  id        String     @id @default(cuid())
+  id        String   @id @default(cuid())
   storeId   String
   name      String
   value     String
-
-  store     Store      @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
   books     Book[]
-
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
+  store     Store    @relation(fields: [storeId], references: [id], onDelete: Cascade)
 
   @@index([storeId])
 }
-
-/// GRADE
 
 model Grade {
-  id        String     @id @default(cuid())
+  id        String   @id @default(cuid())
   storeId   String
   name      String
   value     String
-
-  store     Store      @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
   books     Book[]
-
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
+  store     Store    @relation(fields: [storeId], references: [id], onDelete: Cascade)
 
   @@index([storeId])
 }
 
-/// BOOK
-
 model Book {
-  id          String       @id @default(cuid())
+  id          String      @id @default(cuid())
   storeId     String
   pathwayId   String
   gradeId     String
   durationId  String
   name        String
-  price       Decimal      @db.Decimal(10, 2)
-  isFeatured  Boolean      @default(false)
-  isArchived  Boolean      @default(false)
+  price       Decimal     @db.Decimal(10, 2)
+  isFeatured  Boolean     @default(false)
+  isArchived  Boolean     @default(false)
   description String?
-
-  store       Store        @relation(fields: [storeId], references: [id], onDelete: Cascade)
-  pathway     Pathway      @relation(fields: [pathwayId], references: [id], onDelete: Cascade)
-  grade       Grade        @relation(fields: [gradeId], references: [id], onDelete: Cascade)
-  duration    Duration     @relation(fields: [durationId], references: [id], onDelete: Cascade)
-
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  duration    Duration    @relation(fields: [durationId], references: [id], onDelete: Cascade)
+  grade       Grade       @relation(fields: [gradeId], references: [id], onDelete: Cascade)
+  pathway     Pathway     @relation(fields: [pathwayId], references: [id], onDelete: Cascade)
+  store       Store       @relation(fields: [storeId], references: [id], onDelete: Cascade)
   images      Image[]
   orderItems  OrderItem[]
-
-  createdAt   DateTime     @default(now())
-  updatedAt   DateTime     @updatedAt
 
   @@index([storeId])
   @@index([pathwayId])
@@ -127,48 +101,37 @@ model Book {
   @@index([durationId])
 }
 
-/// IMAGE
-
 model Image {
-  id        String     @id @default(cuid())
+  id        String   @id @default(cuid())
   bookId    String
   url       String
-
-  book      Book       @relation(fields: [bookId], references: [id], onDelete: Cascade)
-
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  book      Book     @relation(fields: [bookId], references: [id], onDelete: Cascade)
 
   @@index([bookId])
 }
 
-/// ORDER
-
 model Order {
-  id        String       @id @default(cuid())
+  id        String      @id @default(cuid())
   storeId   String
-  isPaid    Boolean      @default(false)
+  isPaid    Boolean     @default(false)
   phone     String
   address   String
-
-  store     Store        @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  store     Store       @relation(fields: [storeId], references: [id], onDelete: Cascade)
   items     OrderItem[]
-
-  createdAt DateTime     @default(now())
-  updatedAt DateTime     @updatedAt
 
   @@index([storeId])
 }
 
-/// ORDER ITEM
-
 model OrderItem {
-  id       String       @id @default(cuid())
-  orderId  String
-  bookId   String
-
-  order    Order        @relation(fields: [orderId], references: [id], onDelete: Cascade)
-  book     Book         @relation(fields: [bookId], references: [id], onDelete: Cascade)
+  id      String @id @default(cuid())
+  orderId String
+  bookId  String
+  book    Book   @relation(fields: [bookId], references: [id], onDelete: Cascade)
+  order   Order  @relation(fields: [orderId], references: [id], onDelete: Cascade)
 
   @@index([orderId])
   @@index([bookId])

@@ -186,8 +186,8 @@ export type StoreWhereInput = {
   books?: Prisma.BookListRelationFilter
   durations?: Prisma.DurationListRelationFilter
   grades?: Prisma.GradeListRelationFilter
-  pathways?: Prisma.PathwayListRelationFilter
   orders?: Prisma.OrderListRelationFilter
+  pathways?: Prisma.PathwayListRelationFilter
 }
 
 export type StoreOrderByWithRelationInput = {
@@ -200,8 +200,8 @@ export type StoreOrderByWithRelationInput = {
   books?: Prisma.BookOrderByRelationAggregateInput
   durations?: Prisma.DurationOrderByRelationAggregateInput
   grades?: Prisma.GradeOrderByRelationAggregateInput
-  pathways?: Prisma.PathwayOrderByRelationAggregateInput
   orders?: Prisma.OrderOrderByRelationAggregateInput
+  pathways?: Prisma.PathwayOrderByRelationAggregateInput
 }
 
 export type StoreWhereUniqueInput = Prisma.AtLeast<{
@@ -217,8 +217,8 @@ export type StoreWhereUniqueInput = Prisma.AtLeast<{
   books?: Prisma.BookListRelationFilter
   durations?: Prisma.DurationListRelationFilter
   grades?: Prisma.GradeListRelationFilter
-  pathways?: Prisma.PathwayListRelationFilter
   orders?: Prisma.OrderListRelationFilter
+  pathways?: Prisma.PathwayListRelationFilter
 }, "id">
 
 export type StoreOrderByWithAggregationInput = {
@@ -253,8 +253,8 @@ export type StoreCreateInput = {
   books?: Prisma.BookCreateNestedManyWithoutStoreInput
   durations?: Prisma.DurationCreateNestedManyWithoutStoreInput
   grades?: Prisma.GradeCreateNestedManyWithoutStoreInput
-  pathways?: Prisma.PathwayCreateNestedManyWithoutStoreInput
   orders?: Prisma.OrderCreateNestedManyWithoutStoreInput
+  pathways?: Prisma.PathwayCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUncheckedCreateInput = {
@@ -267,8 +267,8 @@ export type StoreUncheckedCreateInput = {
   books?: Prisma.BookUncheckedCreateNestedManyWithoutStoreInput
   durations?: Prisma.DurationUncheckedCreateNestedManyWithoutStoreInput
   grades?: Prisma.GradeUncheckedCreateNestedManyWithoutStoreInput
-  pathways?: Prisma.PathwayUncheckedCreateNestedManyWithoutStoreInput
   orders?: Prisma.OrderUncheckedCreateNestedManyWithoutStoreInput
+  pathways?: Prisma.PathwayUncheckedCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUpdateInput = {
@@ -281,8 +281,8 @@ export type StoreUpdateInput = {
   books?: Prisma.BookUpdateManyWithoutStoreNestedInput
   durations?: Prisma.DurationUpdateManyWithoutStoreNestedInput
   grades?: Prisma.GradeUpdateManyWithoutStoreNestedInput
-  pathways?: Prisma.PathwayUpdateManyWithoutStoreNestedInput
   orders?: Prisma.OrderUpdateManyWithoutStoreNestedInput
+  pathways?: Prisma.PathwayUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreUncheckedUpdateInput = {
@@ -295,8 +295,8 @@ export type StoreUncheckedUpdateInput = {
   books?: Prisma.BookUncheckedUpdateManyWithoutStoreNestedInput
   durations?: Prisma.DurationUncheckedUpdateManyWithoutStoreNestedInput
   grades?: Prisma.GradeUncheckedUpdateManyWithoutStoreNestedInput
-  pathways?: Prisma.PathwayUncheckedUpdateManyWithoutStoreNestedInput
   orders?: Prisma.OrderUncheckedUpdateManyWithoutStoreNestedInput
+  pathways?: Prisma.PathwayUncheckedUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreCreateManyInput = {
@@ -453,8 +453,8 @@ export type StoreCreateWithoutBillboardsInput = {
   books?: Prisma.BookCreateNestedManyWithoutStoreInput
   durations?: Prisma.DurationCreateNestedManyWithoutStoreInput
   grades?: Prisma.GradeCreateNestedManyWithoutStoreInput
-  pathways?: Prisma.PathwayCreateNestedManyWithoutStoreInput
   orders?: Prisma.OrderCreateNestedManyWithoutStoreInput
+  pathways?: Prisma.PathwayCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUncheckedCreateWithoutBillboardsInput = {
@@ -466,8 +466,8 @@ export type StoreUncheckedCreateWithoutBillboardsInput = {
   books?: Prisma.BookUncheckedCreateNestedManyWithoutStoreInput
   durations?: Prisma.DurationUncheckedCreateNestedManyWithoutStoreInput
   grades?: Prisma.GradeUncheckedCreateNestedManyWithoutStoreInput
-  pathways?: Prisma.PathwayUncheckedCreateNestedManyWithoutStoreInput
   orders?: Prisma.OrderUncheckedCreateNestedManyWithoutStoreInput
+  pathways?: Prisma.PathwayUncheckedCreateNestedManyWithoutStoreInput
 }
 
 export type StoreCreateOrConnectWithoutBillboardsInput = {
@@ -495,8 +495,8 @@ export type StoreUpdateWithoutBillboardsInput = {
   books?: Prisma.BookUpdateManyWithoutStoreNestedInput
   durations?: Prisma.DurationUpdateManyWithoutStoreNestedInput
   grades?: Prisma.GradeUpdateManyWithoutStoreNestedInput
-  pathways?: Prisma.PathwayUpdateManyWithoutStoreNestedInput
   orders?: Prisma.OrderUpdateManyWithoutStoreNestedInput
+  pathways?: Prisma.PathwayUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreUncheckedUpdateWithoutBillboardsInput = {
@@ -508,8 +508,8 @@ export type StoreUncheckedUpdateWithoutBillboardsInput = {
   books?: Prisma.BookUncheckedUpdateManyWithoutStoreNestedInput
   durations?: Prisma.DurationUncheckedUpdateManyWithoutStoreNestedInput
   grades?: Prisma.GradeUncheckedUpdateManyWithoutStoreNestedInput
-  pathways?: Prisma.PathwayUncheckedUpdateManyWithoutStoreNestedInput
   orders?: Prisma.OrderUncheckedUpdateManyWithoutStoreNestedInput
+  pathways?: Prisma.PathwayUncheckedUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreCreateWithoutPathwaysInput = {
@@ -589,8 +589,8 @@ export type StoreCreateWithoutDurationsInput = {
   billboards?: Prisma.BillboardCreateNestedManyWithoutStoreInput
   books?: Prisma.BookCreateNestedManyWithoutStoreInput
   grades?: Prisma.GradeCreateNestedManyWithoutStoreInput
-  pathways?: Prisma.PathwayCreateNestedManyWithoutStoreInput
   orders?: Prisma.OrderCreateNestedManyWithoutStoreInput
+  pathways?: Prisma.PathwayCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUncheckedCreateWithoutDurationsInput = {
@@ -602,8 +602,8 @@ export type StoreUncheckedCreateWithoutDurationsInput = {
   billboards?: Prisma.BillboardUncheckedCreateNestedManyWithoutStoreInput
   books?: Prisma.BookUncheckedCreateNestedManyWithoutStoreInput
   grades?: Prisma.GradeUncheckedCreateNestedManyWithoutStoreInput
-  pathways?: Prisma.PathwayUncheckedCreateNestedManyWithoutStoreInput
   orders?: Prisma.OrderUncheckedCreateNestedManyWithoutStoreInput
+  pathways?: Prisma.PathwayUncheckedCreateNestedManyWithoutStoreInput
 }
 
 export type StoreCreateOrConnectWithoutDurationsInput = {
@@ -631,8 +631,8 @@ export type StoreUpdateWithoutDurationsInput = {
   billboards?: Prisma.BillboardUpdateManyWithoutStoreNestedInput
   books?: Prisma.BookUpdateManyWithoutStoreNestedInput
   grades?: Prisma.GradeUpdateManyWithoutStoreNestedInput
-  pathways?: Prisma.PathwayUpdateManyWithoutStoreNestedInput
   orders?: Prisma.OrderUpdateManyWithoutStoreNestedInput
+  pathways?: Prisma.PathwayUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreUncheckedUpdateWithoutDurationsInput = {
@@ -644,8 +644,8 @@ export type StoreUncheckedUpdateWithoutDurationsInput = {
   billboards?: Prisma.BillboardUncheckedUpdateManyWithoutStoreNestedInput
   books?: Prisma.BookUncheckedUpdateManyWithoutStoreNestedInput
   grades?: Prisma.GradeUncheckedUpdateManyWithoutStoreNestedInput
-  pathways?: Prisma.PathwayUncheckedUpdateManyWithoutStoreNestedInput
   orders?: Prisma.OrderUncheckedUpdateManyWithoutStoreNestedInput
+  pathways?: Prisma.PathwayUncheckedUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreCreateWithoutGradesInput = {
@@ -657,8 +657,8 @@ export type StoreCreateWithoutGradesInput = {
   billboards?: Prisma.BillboardCreateNestedManyWithoutStoreInput
   books?: Prisma.BookCreateNestedManyWithoutStoreInput
   durations?: Prisma.DurationCreateNestedManyWithoutStoreInput
-  pathways?: Prisma.PathwayCreateNestedManyWithoutStoreInput
   orders?: Prisma.OrderCreateNestedManyWithoutStoreInput
+  pathways?: Prisma.PathwayCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUncheckedCreateWithoutGradesInput = {
@@ -670,8 +670,8 @@ export type StoreUncheckedCreateWithoutGradesInput = {
   billboards?: Prisma.BillboardUncheckedCreateNestedManyWithoutStoreInput
   books?: Prisma.BookUncheckedCreateNestedManyWithoutStoreInput
   durations?: Prisma.DurationUncheckedCreateNestedManyWithoutStoreInput
-  pathways?: Prisma.PathwayUncheckedCreateNestedManyWithoutStoreInput
   orders?: Prisma.OrderUncheckedCreateNestedManyWithoutStoreInput
+  pathways?: Prisma.PathwayUncheckedCreateNestedManyWithoutStoreInput
 }
 
 export type StoreCreateOrConnectWithoutGradesInput = {
@@ -699,8 +699,8 @@ export type StoreUpdateWithoutGradesInput = {
   billboards?: Prisma.BillboardUpdateManyWithoutStoreNestedInput
   books?: Prisma.BookUpdateManyWithoutStoreNestedInput
   durations?: Prisma.DurationUpdateManyWithoutStoreNestedInput
-  pathways?: Prisma.PathwayUpdateManyWithoutStoreNestedInput
   orders?: Prisma.OrderUpdateManyWithoutStoreNestedInput
+  pathways?: Prisma.PathwayUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreUncheckedUpdateWithoutGradesInput = {
@@ -712,8 +712,8 @@ export type StoreUncheckedUpdateWithoutGradesInput = {
   billboards?: Prisma.BillboardUncheckedUpdateManyWithoutStoreNestedInput
   books?: Prisma.BookUncheckedUpdateManyWithoutStoreNestedInput
   durations?: Prisma.DurationUncheckedUpdateManyWithoutStoreNestedInput
-  pathways?: Prisma.PathwayUncheckedUpdateManyWithoutStoreNestedInput
   orders?: Prisma.OrderUncheckedUpdateManyWithoutStoreNestedInput
+  pathways?: Prisma.PathwayUncheckedUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreCreateWithoutBooksInput = {
@@ -725,8 +725,8 @@ export type StoreCreateWithoutBooksInput = {
   billboards?: Prisma.BillboardCreateNestedManyWithoutStoreInput
   durations?: Prisma.DurationCreateNestedManyWithoutStoreInput
   grades?: Prisma.GradeCreateNestedManyWithoutStoreInput
-  pathways?: Prisma.PathwayCreateNestedManyWithoutStoreInput
   orders?: Prisma.OrderCreateNestedManyWithoutStoreInput
+  pathways?: Prisma.PathwayCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUncheckedCreateWithoutBooksInput = {
@@ -738,8 +738,8 @@ export type StoreUncheckedCreateWithoutBooksInput = {
   billboards?: Prisma.BillboardUncheckedCreateNestedManyWithoutStoreInput
   durations?: Prisma.DurationUncheckedCreateNestedManyWithoutStoreInput
   grades?: Prisma.GradeUncheckedCreateNestedManyWithoutStoreInput
-  pathways?: Prisma.PathwayUncheckedCreateNestedManyWithoutStoreInput
   orders?: Prisma.OrderUncheckedCreateNestedManyWithoutStoreInput
+  pathways?: Prisma.PathwayUncheckedCreateNestedManyWithoutStoreInput
 }
 
 export type StoreCreateOrConnectWithoutBooksInput = {
@@ -767,8 +767,8 @@ export type StoreUpdateWithoutBooksInput = {
   billboards?: Prisma.BillboardUpdateManyWithoutStoreNestedInput
   durations?: Prisma.DurationUpdateManyWithoutStoreNestedInput
   grades?: Prisma.GradeUpdateManyWithoutStoreNestedInput
-  pathways?: Prisma.PathwayUpdateManyWithoutStoreNestedInput
   orders?: Prisma.OrderUpdateManyWithoutStoreNestedInput
+  pathways?: Prisma.PathwayUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreUncheckedUpdateWithoutBooksInput = {
@@ -780,8 +780,8 @@ export type StoreUncheckedUpdateWithoutBooksInput = {
   billboards?: Prisma.BillboardUncheckedUpdateManyWithoutStoreNestedInput
   durations?: Prisma.DurationUncheckedUpdateManyWithoutStoreNestedInput
   grades?: Prisma.GradeUncheckedUpdateManyWithoutStoreNestedInput
-  pathways?: Prisma.PathwayUncheckedUpdateManyWithoutStoreNestedInput
   orders?: Prisma.OrderUncheckedUpdateManyWithoutStoreNestedInput
+  pathways?: Prisma.PathwayUncheckedUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreCreateWithoutOrdersInput = {
@@ -862,8 +862,8 @@ export type StoreCountOutputType = {
   books: number
   durations: number
   grades: number
-  pathways: number
   orders: number
+  pathways: number
 }
 
 export type StoreCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -871,8 +871,8 @@ export type StoreCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.
   books?: boolean | StoreCountOutputTypeCountBooksArgs
   durations?: boolean | StoreCountOutputTypeCountDurationsArgs
   grades?: boolean | StoreCountOutputTypeCountGradesArgs
-  pathways?: boolean | StoreCountOutputTypeCountPathwaysArgs
   orders?: boolean | StoreCountOutputTypeCountOrdersArgs
+  pathways?: boolean | StoreCountOutputTypeCountPathwaysArgs
 }
 
 /**
@@ -916,15 +916,15 @@ export type StoreCountOutputTypeCountGradesArgs<ExtArgs extends runtime.Types.Ex
 /**
  * StoreCountOutputType without action
  */
-export type StoreCountOutputTypeCountPathwaysArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.PathwayWhereInput
+export type StoreCountOutputTypeCountOrdersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.OrderWhereInput
 }
 
 /**
  * StoreCountOutputType without action
  */
-export type StoreCountOutputTypeCountOrdersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.OrderWhereInput
+export type StoreCountOutputTypeCountPathwaysArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PathwayWhereInput
 }
 
 
@@ -938,8 +938,8 @@ export type StoreSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   books?: boolean | Prisma.Store$booksArgs<ExtArgs>
   durations?: boolean | Prisma.Store$durationsArgs<ExtArgs>
   grades?: boolean | Prisma.Store$gradesArgs<ExtArgs>
-  pathways?: boolean | Prisma.Store$pathwaysArgs<ExtArgs>
   orders?: boolean | Prisma.Store$ordersArgs<ExtArgs>
+  pathways?: boolean | Prisma.Store$pathwaysArgs<ExtArgs>
   _count?: boolean | Prisma.StoreCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["store"]>
 
@@ -973,8 +973,8 @@ export type StoreInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   books?: boolean | Prisma.Store$booksArgs<ExtArgs>
   durations?: boolean | Prisma.Store$durationsArgs<ExtArgs>
   grades?: boolean | Prisma.Store$gradesArgs<ExtArgs>
-  pathways?: boolean | Prisma.Store$pathwaysArgs<ExtArgs>
   orders?: boolean | Prisma.Store$ordersArgs<ExtArgs>
+  pathways?: boolean | Prisma.Store$pathwaysArgs<ExtArgs>
   _count?: boolean | Prisma.StoreCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type StoreIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -987,8 +987,8 @@ export type $StorePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     books: Prisma.$BookPayload<ExtArgs>[]
     durations: Prisma.$DurationPayload<ExtArgs>[]
     grades: Prisma.$GradePayload<ExtArgs>[]
-    pathways: Prisma.$PathwayPayload<ExtArgs>[]
     orders: Prisma.$OrderPayload<ExtArgs>[]
+    pathways: Prisma.$PathwayPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1394,8 +1394,8 @@ export interface Prisma__StoreClient<T, Null = never, ExtArgs extends runtime.Ty
   books<T extends Prisma.Store$booksArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$booksArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BookPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   durations<T extends Prisma.Store$durationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$durationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DurationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   grades<T extends Prisma.Store$gradesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$gradesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$GradePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  pathways<T extends Prisma.Store$pathwaysArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$pathwaysArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PathwayPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   orders<T extends Prisma.Store$ordersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$ordersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$OrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  pathways<T extends Prisma.Store$pathwaysArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$pathwaysArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PathwayPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1914,30 +1914,6 @@ export type Store$gradesArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
 }
 
 /**
- * Store.pathways
- */
-export type Store$pathwaysArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Pathway
-   */
-  select?: Prisma.PathwaySelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Pathway
-   */
-  omit?: Prisma.PathwayOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.PathwayInclude<ExtArgs> | null
-  where?: Prisma.PathwayWhereInput
-  orderBy?: Prisma.PathwayOrderByWithRelationInput | Prisma.PathwayOrderByWithRelationInput[]
-  cursor?: Prisma.PathwayWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.PathwayScalarFieldEnum | Prisma.PathwayScalarFieldEnum[]
-}
-
-/**
  * Store.orders
  */
 export type Store$ordersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1959,6 +1935,30 @@ export type Store$ordersArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
   take?: number
   skip?: number
   distinct?: Prisma.OrderScalarFieldEnum | Prisma.OrderScalarFieldEnum[]
+}
+
+/**
+ * Store.pathways
+ */
+export type Store$pathwaysArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Pathway
+   */
+  select?: Prisma.PathwaySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Pathway
+   */
+  omit?: Prisma.PathwayOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PathwayInclude<ExtArgs> | null
+  where?: Prisma.PathwayWhereInput
+  orderBy?: Prisma.PathwayOrderByWithRelationInput | Prisma.PathwayOrderByWithRelationInput[]
+  cursor?: Prisma.PathwayWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PathwayScalarFieldEnum | Prisma.PathwayScalarFieldEnum[]
 }
 
 /**

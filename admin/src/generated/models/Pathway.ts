@@ -190,9 +190,9 @@ export type PathwayWhereInput = {
   name?: Prisma.StringFilter<"Pathway"> | string
   createdAt?: Prisma.DateTimeFilter<"Pathway"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Pathway"> | Date | string
-  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
-  billboard?: Prisma.XOR<Prisma.BillboardScalarRelationFilter, Prisma.BillboardWhereInput>
   books?: Prisma.BookListRelationFilter
+  billboard?: Prisma.XOR<Prisma.BillboardScalarRelationFilter, Prisma.BillboardWhereInput>
+  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
 }
 
 export type PathwayOrderByWithRelationInput = {
@@ -202,9 +202,9 @@ export type PathwayOrderByWithRelationInput = {
   name?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  store?: Prisma.StoreOrderByWithRelationInput
-  billboard?: Prisma.BillboardOrderByWithRelationInput
   books?: Prisma.BookOrderByRelationAggregateInput
+  billboard?: Prisma.BillboardOrderByWithRelationInput
+  store?: Prisma.StoreOrderByWithRelationInput
 }
 
 export type PathwayWhereUniqueInput = Prisma.AtLeast<{
@@ -217,9 +217,9 @@ export type PathwayWhereUniqueInput = Prisma.AtLeast<{
   name?: Prisma.StringFilter<"Pathway"> | string
   createdAt?: Prisma.DateTimeFilter<"Pathway"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Pathway"> | Date | string
-  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
-  billboard?: Prisma.XOR<Prisma.BillboardScalarRelationFilter, Prisma.BillboardWhereInput>
   books?: Prisma.BookListRelationFilter
+  billboard?: Prisma.XOR<Prisma.BillboardScalarRelationFilter, Prisma.BillboardWhereInput>
+  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
 }, "id">
 
 export type PathwayOrderByWithAggregationInput = {
@@ -251,9 +251,9 @@ export type PathwayCreateInput = {
   name: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutPathwaysInput
-  billboard: Prisma.BillboardCreateNestedOneWithoutPathwaysInput
   books?: Prisma.BookCreateNestedManyWithoutPathwayInput
+  billboard: Prisma.BillboardCreateNestedOneWithoutPathwaysInput
+  store: Prisma.StoreCreateNestedOneWithoutPathwaysInput
 }
 
 export type PathwayUncheckedCreateInput = {
@@ -271,9 +271,9 @@ export type PathwayUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutPathwaysNestedInput
-  billboard?: Prisma.BillboardUpdateOneRequiredWithoutPathwaysNestedInput
   books?: Prisma.BookUpdateManyWithoutPathwayNestedInput
+  billboard?: Prisma.BillboardUpdateOneRequiredWithoutPathwaysNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutPathwaysNestedInput
 }
 
 export type PathwayUncheckedUpdateInput = {
@@ -456,8 +456,8 @@ export type PathwayCreateWithoutStoreInput = {
   name: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  billboard: Prisma.BillboardCreateNestedOneWithoutPathwaysInput
   books?: Prisma.BookCreateNestedManyWithoutPathwayInput
+  billboard: Prisma.BillboardCreateNestedOneWithoutPathwaysInput
 }
 
 export type PathwayUncheckedCreateWithoutStoreInput = {
@@ -512,8 +512,8 @@ export type PathwayCreateWithoutBillboardInput = {
   name: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutPathwaysInput
   books?: Prisma.BookCreateNestedManyWithoutPathwayInput
+  store: Prisma.StoreCreateNestedOneWithoutPathwaysInput
 }
 
 export type PathwayUncheckedCreateWithoutBillboardInput = {
@@ -556,8 +556,8 @@ export type PathwayCreateWithoutBooksInput = {
   name: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutPathwaysInput
   billboard: Prisma.BillboardCreateNestedOneWithoutPathwaysInput
+  store: Prisma.StoreCreateNestedOneWithoutPathwaysInput
 }
 
 export type PathwayUncheckedCreateWithoutBooksInput = {
@@ -590,8 +590,8 @@ export type PathwayUpdateWithoutBooksInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutPathwaysNestedInput
   billboard?: Prisma.BillboardUpdateOneRequiredWithoutPathwaysNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutPathwaysNestedInput
 }
 
 export type PathwayUncheckedUpdateWithoutBooksInput = {
@@ -616,8 +616,8 @@ export type PathwayUpdateWithoutStoreInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  billboard?: Prisma.BillboardUpdateOneRequiredWithoutPathwaysNestedInput
   books?: Prisma.BookUpdateManyWithoutPathwayNestedInput
+  billboard?: Prisma.BillboardUpdateOneRequiredWithoutPathwaysNestedInput
 }
 
 export type PathwayUncheckedUpdateWithoutStoreInput = {
@@ -650,8 +650,8 @@ export type PathwayUpdateWithoutBillboardInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutPathwaysNestedInput
   books?: Prisma.BookUpdateManyWithoutPathwayNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutPathwaysNestedInput
 }
 
 export type PathwayUncheckedUpdateWithoutBillboardInput = {
@@ -709,9 +709,9 @@ export type PathwaySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   name?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
-  billboard?: boolean | Prisma.BillboardDefaultArgs<ExtArgs>
   books?: boolean | Prisma.Pathway$booksArgs<ExtArgs>
+  billboard?: boolean | Prisma.BillboardDefaultArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
   _count?: boolean | Prisma.PathwayCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["pathway"]>
 
@@ -722,8 +722,8 @@ export type PathwaySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   name?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
   billboard?: boolean | Prisma.BillboardDefaultArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["pathway"]>
 
 export type PathwaySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -733,8 +733,8 @@ export type PathwaySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   name?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
   billboard?: boolean | Prisma.BillboardDefaultArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["pathway"]>
 
 export type PathwaySelectScalar = {
@@ -748,26 +748,26 @@ export type PathwaySelectScalar = {
 
 export type PathwayOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "storeId" | "billboardId" | "name" | "createdAt" | "updatedAt", ExtArgs["result"]["pathway"]>
 export type PathwayInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
-  billboard?: boolean | Prisma.BillboardDefaultArgs<ExtArgs>
   books?: boolean | Prisma.Pathway$booksArgs<ExtArgs>
+  billboard?: boolean | Prisma.BillboardDefaultArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
   _count?: boolean | Prisma.PathwayCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type PathwayIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
   billboard?: boolean | Prisma.BillboardDefaultArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }
 export type PathwayIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
   billboard?: boolean | Prisma.BillboardDefaultArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }
 
 export type $PathwayPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Pathway"
   objects: {
-    store: Prisma.$StorePayload<ExtArgs>
-    billboard: Prisma.$BillboardPayload<ExtArgs>
     books: Prisma.$BookPayload<ExtArgs>[]
+    billboard: Prisma.$BillboardPayload<ExtArgs>
+    store: Prisma.$StorePayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1170,9 +1170,9 @@ readonly fields: PathwayFieldRefs;
  */
 export interface Prisma__PathwayClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  store<T extends Prisma.StoreDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StoreDefaultArgs<ExtArgs>>): Prisma.Prisma__StoreClient<runtime.Types.Result.GetResult<Prisma.$StorePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  billboard<T extends Prisma.BillboardDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.BillboardDefaultArgs<ExtArgs>>): Prisma.Prisma__BillboardClient<runtime.Types.Result.GetResult<Prisma.$BillboardPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   books<T extends Prisma.Pathway$booksArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Pathway$booksArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BookPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  billboard<T extends Prisma.BillboardDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.BillboardDefaultArgs<ExtArgs>>): Prisma.Prisma__BillboardClient<runtime.Types.Result.GetResult<Prisma.$BillboardPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  store<T extends Prisma.StoreDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StoreDefaultArgs<ExtArgs>>): Prisma.Prisma__StoreClient<runtime.Types.Result.GetResult<Prisma.$StorePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.

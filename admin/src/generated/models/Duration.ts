@@ -190,8 +190,8 @@ export type DurationWhereInput = {
   value?: Prisma.StringFilter<"Duration"> | string
   createdAt?: Prisma.DateTimeFilter<"Duration"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Duration"> | Date | string
-  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
   books?: Prisma.BookListRelationFilter
+  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
 }
 
 export type DurationOrderByWithRelationInput = {
@@ -201,8 +201,8 @@ export type DurationOrderByWithRelationInput = {
   value?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  store?: Prisma.StoreOrderByWithRelationInput
   books?: Prisma.BookOrderByRelationAggregateInput
+  store?: Prisma.StoreOrderByWithRelationInput
 }
 
 export type DurationWhereUniqueInput = Prisma.AtLeast<{
@@ -215,8 +215,8 @@ export type DurationWhereUniqueInput = Prisma.AtLeast<{
   value?: Prisma.StringFilter<"Duration"> | string
   createdAt?: Prisma.DateTimeFilter<"Duration"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Duration"> | Date | string
-  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
   books?: Prisma.BookListRelationFilter
+  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
 }, "id">
 
 export type DurationOrderByWithAggregationInput = {
@@ -249,8 +249,8 @@ export type DurationCreateInput = {
   value: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutDurationsInput
   books?: Prisma.BookCreateNestedManyWithoutDurationInput
+  store: Prisma.StoreCreateNestedOneWithoutDurationsInput
 }
 
 export type DurationUncheckedCreateInput = {
@@ -269,8 +269,8 @@ export type DurationUpdateInput = {
   value?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutDurationsNestedInput
   books?: Prisma.BookUpdateManyWithoutDurationNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutDurationsNestedInput
 }
 
 export type DurationUncheckedUpdateInput = {
@@ -587,8 +587,8 @@ export type DurationSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   value?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
   books?: boolean | Prisma.Duration$booksArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
   _count?: boolean | Prisma.DurationCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["duration"]>
 
@@ -623,8 +623,8 @@ export type DurationSelectScalar = {
 
 export type DurationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "storeId" | "name" | "value" | "createdAt" | "updatedAt", ExtArgs["result"]["duration"]>
 export type DurationInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
   books?: boolean | Prisma.Duration$booksArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
   _count?: boolean | Prisma.DurationCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type DurationIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -637,8 +637,8 @@ export type DurationIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
 export type $DurationPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Duration"
   objects: {
-    store: Prisma.$StorePayload<ExtArgs>
     books: Prisma.$BookPayload<ExtArgs>[]
+    store: Prisma.$StorePayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1041,8 +1041,8 @@ readonly fields: DurationFieldRefs;
  */
 export interface Prisma__DurationClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  store<T extends Prisma.StoreDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StoreDefaultArgs<ExtArgs>>): Prisma.Prisma__StoreClient<runtime.Types.Result.GetResult<Prisma.$StorePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   books<T extends Prisma.Duration$booksArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Duration$booksArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BookPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  store<T extends Prisma.StoreDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StoreDefaultArgs<ExtArgs>>): Prisma.Prisma__StoreClient<runtime.Types.Result.GetResult<Prisma.$StorePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.

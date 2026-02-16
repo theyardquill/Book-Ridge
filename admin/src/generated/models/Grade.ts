@@ -190,8 +190,8 @@ export type GradeWhereInput = {
   value?: Prisma.StringFilter<"Grade"> | string
   createdAt?: Prisma.DateTimeFilter<"Grade"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Grade"> | Date | string
-  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
   books?: Prisma.BookListRelationFilter
+  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
 }
 
 export type GradeOrderByWithRelationInput = {
@@ -201,8 +201,8 @@ export type GradeOrderByWithRelationInput = {
   value?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  store?: Prisma.StoreOrderByWithRelationInput
   books?: Prisma.BookOrderByRelationAggregateInput
+  store?: Prisma.StoreOrderByWithRelationInput
 }
 
 export type GradeWhereUniqueInput = Prisma.AtLeast<{
@@ -215,8 +215,8 @@ export type GradeWhereUniqueInput = Prisma.AtLeast<{
   value?: Prisma.StringFilter<"Grade"> | string
   createdAt?: Prisma.DateTimeFilter<"Grade"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Grade"> | Date | string
-  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
   books?: Prisma.BookListRelationFilter
+  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
 }, "id">
 
 export type GradeOrderByWithAggregationInput = {
@@ -249,8 +249,8 @@ export type GradeCreateInput = {
   value: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutGradesInput
   books?: Prisma.BookCreateNestedManyWithoutGradeInput
+  store: Prisma.StoreCreateNestedOneWithoutGradesInput
 }
 
 export type GradeUncheckedCreateInput = {
@@ -269,8 +269,8 @@ export type GradeUpdateInput = {
   value?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutGradesNestedInput
   books?: Prisma.BookUpdateManyWithoutGradeNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutGradesNestedInput
 }
 
 export type GradeUncheckedUpdateInput = {
@@ -587,8 +587,8 @@ export type GradeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   value?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
   books?: boolean | Prisma.Grade$booksArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
   _count?: boolean | Prisma.GradeCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["grade"]>
 
@@ -623,8 +623,8 @@ export type GradeSelectScalar = {
 
 export type GradeOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "storeId" | "name" | "value" | "createdAt" | "updatedAt", ExtArgs["result"]["grade"]>
 export type GradeInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
   books?: boolean | Prisma.Grade$booksArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
   _count?: boolean | Prisma.GradeCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type GradeIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -637,8 +637,8 @@ export type GradeIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extens
 export type $GradePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Grade"
   objects: {
-    store: Prisma.$StorePayload<ExtArgs>
     books: Prisma.$BookPayload<ExtArgs>[]
+    store: Prisma.$StorePayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1041,8 +1041,8 @@ readonly fields: GradeFieldRefs;
  */
 export interface Prisma__GradeClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  store<T extends Prisma.StoreDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StoreDefaultArgs<ExtArgs>>): Prisma.Prisma__StoreClient<runtime.Types.Result.GetResult<Prisma.$StorePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   books<T extends Prisma.Grade$booksArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Grade$booksArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BookPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  store<T extends Prisma.StoreDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StoreDefaultArgs<ExtArgs>>): Prisma.Prisma__StoreClient<runtime.Types.Result.GetResult<Prisma.$StorePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.

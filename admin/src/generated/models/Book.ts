@@ -272,10 +272,10 @@ export type BookWhereInput = {
   description?: Prisma.StringNullableFilter<"Book"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Book"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Book"> | Date | string
-  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
-  pathway?: Prisma.XOR<Prisma.PathwayScalarRelationFilter, Prisma.PathwayWhereInput>
-  grade?: Prisma.XOR<Prisma.GradeScalarRelationFilter, Prisma.GradeWhereInput>
   duration?: Prisma.XOR<Prisma.DurationScalarRelationFilter, Prisma.DurationWhereInput>
+  grade?: Prisma.XOR<Prisma.GradeScalarRelationFilter, Prisma.GradeWhereInput>
+  pathway?: Prisma.XOR<Prisma.PathwayScalarRelationFilter, Prisma.PathwayWhereInput>
+  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
   images?: Prisma.ImageListRelationFilter
   orderItems?: Prisma.OrderItemListRelationFilter
 }
@@ -293,10 +293,10 @@ export type BookOrderByWithRelationInput = {
   description?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  store?: Prisma.StoreOrderByWithRelationInput
-  pathway?: Prisma.PathwayOrderByWithRelationInput
-  grade?: Prisma.GradeOrderByWithRelationInput
   duration?: Prisma.DurationOrderByWithRelationInput
+  grade?: Prisma.GradeOrderByWithRelationInput
+  pathway?: Prisma.PathwayOrderByWithRelationInput
+  store?: Prisma.StoreOrderByWithRelationInput
   images?: Prisma.ImageOrderByRelationAggregateInput
   orderItems?: Prisma.OrderItemOrderByRelationAggregateInput
 }
@@ -317,10 +317,10 @@ export type BookWhereUniqueInput = Prisma.AtLeast<{
   description?: Prisma.StringNullableFilter<"Book"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Book"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Book"> | Date | string
-  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
-  pathway?: Prisma.XOR<Prisma.PathwayScalarRelationFilter, Prisma.PathwayWhereInput>
-  grade?: Prisma.XOR<Prisma.GradeScalarRelationFilter, Prisma.GradeWhereInput>
   duration?: Prisma.XOR<Prisma.DurationScalarRelationFilter, Prisma.DurationWhereInput>
+  grade?: Prisma.XOR<Prisma.GradeScalarRelationFilter, Prisma.GradeWhereInput>
+  pathway?: Prisma.XOR<Prisma.PathwayScalarRelationFilter, Prisma.PathwayWhereInput>
+  store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
   images?: Prisma.ImageListRelationFilter
   orderItems?: Prisma.OrderItemListRelationFilter
 }, "id">
@@ -372,10 +372,10 @@ export type BookCreateInput = {
   description?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutBooksInput
-  pathway: Prisma.PathwayCreateNestedOneWithoutBooksInput
-  grade: Prisma.GradeCreateNestedOneWithoutBooksInput
   duration: Prisma.DurationCreateNestedOneWithoutBooksInput
+  grade: Prisma.GradeCreateNestedOneWithoutBooksInput
+  pathway: Prisma.PathwayCreateNestedOneWithoutBooksInput
+  store: Prisma.StoreCreateNestedOneWithoutBooksInput
   images?: Prisma.ImageCreateNestedManyWithoutBookInput
   orderItems?: Prisma.OrderItemCreateNestedManyWithoutBookInput
 }
@@ -406,10 +406,10 @@ export type BookUpdateInput = {
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutBooksNestedInput
-  pathway?: Prisma.PathwayUpdateOneRequiredWithoutBooksNestedInput
-  grade?: Prisma.GradeUpdateOneRequiredWithoutBooksNestedInput
   duration?: Prisma.DurationUpdateOneRequiredWithoutBooksNestedInput
+  grade?: Prisma.GradeUpdateOneRequiredWithoutBooksNestedInput
+  pathway?: Prisma.PathwayUpdateOneRequiredWithoutBooksNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutBooksNestedInput
   images?: Prisma.ImageUpdateManyWithoutBookNestedInput
   orderItems?: Prisma.OrderItemUpdateManyWithoutBookNestedInput
 }
@@ -761,9 +761,9 @@ export type BookCreateWithoutStoreInput = {
   description?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  pathway: Prisma.PathwayCreateNestedOneWithoutBooksInput
-  grade: Prisma.GradeCreateNestedOneWithoutBooksInput
   duration: Prisma.DurationCreateNestedOneWithoutBooksInput
+  grade: Prisma.GradeCreateNestedOneWithoutBooksInput
+  pathway: Prisma.PathwayCreateNestedOneWithoutBooksInput
   images?: Prisma.ImageCreateNestedManyWithoutBookInput
   orderItems?: Prisma.OrderItemCreateNestedManyWithoutBookInput
 }
@@ -837,9 +837,9 @@ export type BookCreateWithoutPathwayInput = {
   description?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutBooksInput
-  grade: Prisma.GradeCreateNestedOneWithoutBooksInput
   duration: Prisma.DurationCreateNestedOneWithoutBooksInput
+  grade: Prisma.GradeCreateNestedOneWithoutBooksInput
+  store: Prisma.StoreCreateNestedOneWithoutBooksInput
   images?: Prisma.ImageCreateNestedManyWithoutBookInput
   orderItems?: Prisma.OrderItemCreateNestedManyWithoutBookInput
 }
@@ -895,9 +895,9 @@ export type BookCreateWithoutDurationInput = {
   description?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutBooksInput
-  pathway: Prisma.PathwayCreateNestedOneWithoutBooksInput
   grade: Prisma.GradeCreateNestedOneWithoutBooksInput
+  pathway: Prisma.PathwayCreateNestedOneWithoutBooksInput
+  store: Prisma.StoreCreateNestedOneWithoutBooksInput
   images?: Prisma.ImageCreateNestedManyWithoutBookInput
   orderItems?: Prisma.OrderItemCreateNestedManyWithoutBookInput
 }
@@ -953,9 +953,9 @@ export type BookCreateWithoutGradeInput = {
   description?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutBooksInput
-  pathway: Prisma.PathwayCreateNestedOneWithoutBooksInput
   duration: Prisma.DurationCreateNestedOneWithoutBooksInput
+  pathway: Prisma.PathwayCreateNestedOneWithoutBooksInput
+  store: Prisma.StoreCreateNestedOneWithoutBooksInput
   images?: Prisma.ImageCreateNestedManyWithoutBookInput
   orderItems?: Prisma.OrderItemCreateNestedManyWithoutBookInput
 }
@@ -1011,10 +1011,10 @@ export type BookCreateWithoutImagesInput = {
   description?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutBooksInput
-  pathway: Prisma.PathwayCreateNestedOneWithoutBooksInput
-  grade: Prisma.GradeCreateNestedOneWithoutBooksInput
   duration: Prisma.DurationCreateNestedOneWithoutBooksInput
+  grade: Prisma.GradeCreateNestedOneWithoutBooksInput
+  pathway: Prisma.PathwayCreateNestedOneWithoutBooksInput
+  store: Prisma.StoreCreateNestedOneWithoutBooksInput
   orderItems?: Prisma.OrderItemCreateNestedManyWithoutBookInput
 }
 
@@ -1059,10 +1059,10 @@ export type BookUpdateWithoutImagesInput = {
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutBooksNestedInput
-  pathway?: Prisma.PathwayUpdateOneRequiredWithoutBooksNestedInput
-  grade?: Prisma.GradeUpdateOneRequiredWithoutBooksNestedInput
   duration?: Prisma.DurationUpdateOneRequiredWithoutBooksNestedInput
+  grade?: Prisma.GradeUpdateOneRequiredWithoutBooksNestedInput
+  pathway?: Prisma.PathwayUpdateOneRequiredWithoutBooksNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutBooksNestedInput
   orderItems?: Prisma.OrderItemUpdateManyWithoutBookNestedInput
 }
 
@@ -1091,10 +1091,10 @@ export type BookCreateWithoutOrderItemsInput = {
   description?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  store: Prisma.StoreCreateNestedOneWithoutBooksInput
-  pathway: Prisma.PathwayCreateNestedOneWithoutBooksInput
-  grade: Prisma.GradeCreateNestedOneWithoutBooksInput
   duration: Prisma.DurationCreateNestedOneWithoutBooksInput
+  grade: Prisma.GradeCreateNestedOneWithoutBooksInput
+  pathway: Prisma.PathwayCreateNestedOneWithoutBooksInput
+  store: Prisma.StoreCreateNestedOneWithoutBooksInput
   images?: Prisma.ImageCreateNestedManyWithoutBookInput
 }
 
@@ -1139,10 +1139,10 @@ export type BookUpdateWithoutOrderItemsInput = {
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutBooksNestedInput
-  pathway?: Prisma.PathwayUpdateOneRequiredWithoutBooksNestedInput
-  grade?: Prisma.GradeUpdateOneRequiredWithoutBooksNestedInput
   duration?: Prisma.DurationUpdateOneRequiredWithoutBooksNestedInput
+  grade?: Prisma.GradeUpdateOneRequiredWithoutBooksNestedInput
+  pathway?: Prisma.PathwayUpdateOneRequiredWithoutBooksNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutBooksNestedInput
   images?: Prisma.ImageUpdateManyWithoutBookNestedInput
 }
 
@@ -1185,9 +1185,9 @@ export type BookUpdateWithoutStoreInput = {
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  pathway?: Prisma.PathwayUpdateOneRequiredWithoutBooksNestedInput
-  grade?: Prisma.GradeUpdateOneRequiredWithoutBooksNestedInput
   duration?: Prisma.DurationUpdateOneRequiredWithoutBooksNestedInput
+  grade?: Prisma.GradeUpdateOneRequiredWithoutBooksNestedInput
+  pathway?: Prisma.PathwayUpdateOneRequiredWithoutBooksNestedInput
   images?: Prisma.ImageUpdateManyWithoutBookNestedInput
   orderItems?: Prisma.OrderItemUpdateManyWithoutBookNestedInput
 }
@@ -1245,9 +1245,9 @@ export type BookUpdateWithoutPathwayInput = {
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutBooksNestedInput
-  grade?: Prisma.GradeUpdateOneRequiredWithoutBooksNestedInput
   duration?: Prisma.DurationUpdateOneRequiredWithoutBooksNestedInput
+  grade?: Prisma.GradeUpdateOneRequiredWithoutBooksNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutBooksNestedInput
   images?: Prisma.ImageUpdateManyWithoutBookNestedInput
   orderItems?: Prisma.OrderItemUpdateManyWithoutBookNestedInput
 }
@@ -1305,9 +1305,9 @@ export type BookUpdateWithoutDurationInput = {
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutBooksNestedInput
-  pathway?: Prisma.PathwayUpdateOneRequiredWithoutBooksNestedInput
   grade?: Prisma.GradeUpdateOneRequiredWithoutBooksNestedInput
+  pathway?: Prisma.PathwayUpdateOneRequiredWithoutBooksNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutBooksNestedInput
   images?: Prisma.ImageUpdateManyWithoutBookNestedInput
   orderItems?: Prisma.OrderItemUpdateManyWithoutBookNestedInput
 }
@@ -1365,9 +1365,9 @@ export type BookUpdateWithoutGradeInput = {
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  store?: Prisma.StoreUpdateOneRequiredWithoutBooksNestedInput
-  pathway?: Prisma.PathwayUpdateOneRequiredWithoutBooksNestedInput
   duration?: Prisma.DurationUpdateOneRequiredWithoutBooksNestedInput
+  pathway?: Prisma.PathwayUpdateOneRequiredWithoutBooksNestedInput
+  store?: Prisma.StoreUpdateOneRequiredWithoutBooksNestedInput
   images?: Prisma.ImageUpdateManyWithoutBookNestedInput
   orderItems?: Prisma.OrderItemUpdateManyWithoutBookNestedInput
 }
@@ -1455,10 +1455,10 @@ export type BookSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   description?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
-  pathway?: boolean | Prisma.PathwayDefaultArgs<ExtArgs>
-  grade?: boolean | Prisma.GradeDefaultArgs<ExtArgs>
   duration?: boolean | Prisma.DurationDefaultArgs<ExtArgs>
+  grade?: boolean | Prisma.GradeDefaultArgs<ExtArgs>
+  pathway?: boolean | Prisma.PathwayDefaultArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
   images?: boolean | Prisma.Book$imagesArgs<ExtArgs>
   orderItems?: boolean | Prisma.Book$orderItemsArgs<ExtArgs>
   _count?: boolean | Prisma.BookCountOutputTypeDefaultArgs<ExtArgs>
@@ -1477,10 +1477,10 @@ export type BookSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   description?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
-  pathway?: boolean | Prisma.PathwayDefaultArgs<ExtArgs>
-  grade?: boolean | Prisma.GradeDefaultArgs<ExtArgs>
   duration?: boolean | Prisma.DurationDefaultArgs<ExtArgs>
+  grade?: boolean | Prisma.GradeDefaultArgs<ExtArgs>
+  pathway?: boolean | Prisma.PathwayDefaultArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["book"]>
 
 export type BookSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1496,10 +1496,10 @@ export type BookSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   description?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
-  pathway?: boolean | Prisma.PathwayDefaultArgs<ExtArgs>
-  grade?: boolean | Prisma.GradeDefaultArgs<ExtArgs>
   duration?: boolean | Prisma.DurationDefaultArgs<ExtArgs>
+  grade?: boolean | Prisma.GradeDefaultArgs<ExtArgs>
+  pathway?: boolean | Prisma.PathwayDefaultArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["book"]>
 
 export type BookSelectScalar = {
@@ -1519,34 +1519,34 @@ export type BookSelectScalar = {
 
 export type BookOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "storeId" | "pathwayId" | "gradeId" | "durationId" | "name" | "price" | "isFeatured" | "isArchived" | "description" | "createdAt" | "updatedAt", ExtArgs["result"]["book"]>
 export type BookInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
-  pathway?: boolean | Prisma.PathwayDefaultArgs<ExtArgs>
-  grade?: boolean | Prisma.GradeDefaultArgs<ExtArgs>
   duration?: boolean | Prisma.DurationDefaultArgs<ExtArgs>
+  grade?: boolean | Prisma.GradeDefaultArgs<ExtArgs>
+  pathway?: boolean | Prisma.PathwayDefaultArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
   images?: boolean | Prisma.Book$imagesArgs<ExtArgs>
   orderItems?: boolean | Prisma.Book$orderItemsArgs<ExtArgs>
   _count?: boolean | Prisma.BookCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type BookIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
-  pathway?: boolean | Prisma.PathwayDefaultArgs<ExtArgs>
-  grade?: boolean | Prisma.GradeDefaultArgs<ExtArgs>
   duration?: boolean | Prisma.DurationDefaultArgs<ExtArgs>
+  grade?: boolean | Prisma.GradeDefaultArgs<ExtArgs>
+  pathway?: boolean | Prisma.PathwayDefaultArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }
 export type BookIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
-  pathway?: boolean | Prisma.PathwayDefaultArgs<ExtArgs>
-  grade?: boolean | Prisma.GradeDefaultArgs<ExtArgs>
   duration?: boolean | Prisma.DurationDefaultArgs<ExtArgs>
+  grade?: boolean | Prisma.GradeDefaultArgs<ExtArgs>
+  pathway?: boolean | Prisma.PathwayDefaultArgs<ExtArgs>
+  store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }
 
 export type $BookPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Book"
   objects: {
-    store: Prisma.$StorePayload<ExtArgs>
-    pathway: Prisma.$PathwayPayload<ExtArgs>
-    grade: Prisma.$GradePayload<ExtArgs>
     duration: Prisma.$DurationPayload<ExtArgs>
+    grade: Prisma.$GradePayload<ExtArgs>
+    pathway: Prisma.$PathwayPayload<ExtArgs>
+    store: Prisma.$StorePayload<ExtArgs>
     images: Prisma.$ImagePayload<ExtArgs>[]
     orderItems: Prisma.$OrderItemPayload<ExtArgs>[]
   }
@@ -1957,10 +1957,10 @@ readonly fields: BookFieldRefs;
  */
 export interface Prisma__BookClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  store<T extends Prisma.StoreDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StoreDefaultArgs<ExtArgs>>): Prisma.Prisma__StoreClient<runtime.Types.Result.GetResult<Prisma.$StorePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  pathway<T extends Prisma.PathwayDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PathwayDefaultArgs<ExtArgs>>): Prisma.Prisma__PathwayClient<runtime.Types.Result.GetResult<Prisma.$PathwayPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  grade<T extends Prisma.GradeDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.GradeDefaultArgs<ExtArgs>>): Prisma.Prisma__GradeClient<runtime.Types.Result.GetResult<Prisma.$GradePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   duration<T extends Prisma.DurationDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.DurationDefaultArgs<ExtArgs>>): Prisma.Prisma__DurationClient<runtime.Types.Result.GetResult<Prisma.$DurationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  grade<T extends Prisma.GradeDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.GradeDefaultArgs<ExtArgs>>): Prisma.Prisma__GradeClient<runtime.Types.Result.GetResult<Prisma.$GradePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  pathway<T extends Prisma.PathwayDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PathwayDefaultArgs<ExtArgs>>): Prisma.Prisma__PathwayClient<runtime.Types.Result.GetResult<Prisma.$PathwayPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  store<T extends Prisma.StoreDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StoreDefaultArgs<ExtArgs>>): Prisma.Prisma__StoreClient<runtime.Types.Result.GetResult<Prisma.$StorePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   images<T extends Prisma.Book$imagesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Book$imagesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ImagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   orderItems<T extends Prisma.Book$orderItemsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Book$orderItemsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$OrderItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
