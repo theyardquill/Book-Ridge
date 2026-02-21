@@ -17,24 +17,24 @@ export function MainNav({ className, ...props } : React.HTMLAttributes<HTMLEleme
         label: 'Billboards',
         active: pathname === `/${params.storeId}/billboards`
     }, {
-        href: `/${params.storeId}/categories`,
-        label: 'Categories',
-        active: pathname === `/${params.storeId}/categories`
+        href: `/${params.storeId}/pathways`,
+        label: 'Pathways',
+        active: pathname === `/${params.storeId}/pathways`
     }, {
-        href: `/${params.storeId}/sizes`,
-        label: 'Sizes',
-        active: pathname === `/${params.storeId}/sizes`
+        href: `/${params.storeId}/grades`,
+        label: 'Grades',
+        active: pathname === `/${params.storeId}/grades`
     }, {
-        href: `/${params.storeId}/colors`,
-        label: 'Colors',
-        active: pathname === `/${params.storeId}/colors`
+        href: `/${params.storeId}/durations`,
+        label: 'Durations',
+        active: pathname === `/${params.storeId}/durations`
     }, {
-        href: `/${params.storeId}/products`,
-        label: 'Safari Packages',
-        active: pathname === `/${params.storeId}/products`
+        href: `/${params.storeId}/books`,
+        label: 'Books',
+        active: pathname === `/${params.storeId}/books`
     }, {
         href: `/${params.storeId}/orders`,
-        label: 'Bookings',
+        label: 'Orders',
         active: pathname === `/${params.storeId}/orders`
     }, {
         href: `/${params.storeId}/settings`,
