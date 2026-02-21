@@ -5,8 +5,11 @@ declare global {
     var prisma: PrismaClient | undefined;
 };
 
+// Use direct PostgreSQL URL for the adapter (prisma+postgres:// not supported)
+const directUrl = process.env.DIRECT_DATABASE_URL || "postgres://postgres:postgres@localhost:51217/template1?sslmode=disable";
+
 const adapter = new PrismaPg({
-    connectionString: process.env.DATABASE_URL!,
+    connectionString: directUrl,
 });
 
 const prismadb = globalThis.prisma || new PrismaClient({ adapter });
