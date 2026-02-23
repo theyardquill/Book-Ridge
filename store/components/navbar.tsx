@@ -1,14 +1,14 @@
 import Container from "@/components/ui/container";
 import Link from "next/link";
 import { MainNav } from "@/components";
-import getCategories from "@/actions/get-categories";
+import getPathways from "@/actions/get-pathways";
 import NavbarActions from "./navbar-actions";
 import Image from "next/image";
 
 export const revalidate = 0;
 
 const Navbar = async () => {
-    const categories = await getCategories();
+    const pathways = await getPathways();
 
     return (
         <nav className="bg-white shadow-md border-b border-[#994C00] shadow-[#994C00] w-full px-8 md:px-4">
@@ -30,7 +30,7 @@ const Navbar = async () => {
 
                     {/* Navigation Links */}
                     <div className="order-3 w-full md:w-auto md:order-2">
-                        <MainNav data={categories || []} />
+                        <MainNav data={pathways || []} />
                     </div>
 
                     {/* Actions */}

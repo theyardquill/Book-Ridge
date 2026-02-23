@@ -5,12 +5,12 @@ import Navbar from "@/components/navbar";
 
 interface DashboardType {
     children: React.ReactNode;
-    params: { storeId: string };
+    params: Promise<{ storeId: string }>;
 }
 
 export default async function Dashboard({ children, params }: DashboardType) {
     const { userId } = await auth();
-    const { storeId } = params; // ✅ no await
+    const { storeId } = await params;
 
     if (!userId) {
         redirect('/sign-in');
