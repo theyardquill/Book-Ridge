@@ -1,13 +1,14 @@
-import getCategory from "@/actions/get-category";
-import getColors from "@/actions/get-colors";
-import getProducts from "@/actions/get-products";
-import getSizes from "@/actions/get-sizes";
+import getCategory from "@/actions/get-pathway";
+import getColors from "@/actions/get-durations";
+import getProducts from "@/actions/get-books";
+import getSizes from "@/actions/get-durations";
 import Billboard from "@/components/billboard";
 import Container from "@/components/ui/container";
 import Filter from "./components/filter";
 import NoResults from "@/components/ui/no-results";
 import ProductCard from "@/components/ui/product-card";
 import MobileFilters from "./components/mobile-filters";
+import getBooks from "@/actions/get-books";
 
 export const revalidate = 0;
 
@@ -17,7 +18,7 @@ type SearchParams = Promise<{ colorId: string, sizeId: string }>
 const CategoryPage = async ({ params, searchParams }: { params: Params, searchParams: SearchParams }) => {
     const { categoryId } = await params;
     const { colorId, sizeId } = await searchParams;
-    const products = await getProducts({ categoryId: categoryId, colorId: colorId, sizeId: sizeId })
+    const products = await getBooks({ pathwayId: categoryId, durationId: colorId, Id: sizeId })
     const sizes = await getSizes();
     const colors = await getColors();
     const category = await getCategory(categoryId)
