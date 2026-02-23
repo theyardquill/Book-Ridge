@@ -3,10 +3,14 @@
 import { cn } from "@/lib/utils"
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { Button } from "./ui/button";
 
 export function MainNav({ className, ...props } : React.HTMLAttributes<HTMLElement>) {
     const pathname = usePathname();
     const params = useParams();
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const routes = [{
         href: `/${params.storeId}`,
@@ -41,13 +45,57 @@ export function MainNav({ className, ...props } : React.HTMLAttributes<HTMLEleme
         label: 'Settings',
         active: pathname === `/${params.storeId}/settings`
     }];
+
     return (
-        <nav className={cn("flex items-center space-x-4 lg:space-x-6", className)}>
-           {routes.map((route, index) => (
-            <Link key={index} href={route.href} className={cn("text-sm font-medium transition-colors hover:text-primary", route.active ? "text-black dark:text-white" : "text-muted-foreground")}>
-                {route.label}
-            </Link>
-           ))} 
-        </nav>
+        <>
+            {/* Mobile menu button */}
+            <Button
+                variant="ghost"
+                size="icon"
+                className="lg:hidden"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+                {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </Button>
+
+            {/* Desktop navigation */}
+            <nav className={cn("hidden lg:flex items-center space-x-4 lg:space-x-6", className)}>
+                {routes.map((route, index) => (
+                    <Link
+                        key={index}
+                        href={route.href}
+                        className={cn(
+                            "text-sm font-medium transition-colors hover:text-primary",
+                            route.active ? "text-black dark:text-white" : "text-muted-foreground"
+                        )}
+                    >
+                        {route.label}
+                    </Link>
+                ))}
+            </nav>
+
+            {/* Mobile navigation dropdown */}
+            {mobileMenuOpen && (
+                <div className="absolute top-16 left-0 right-0 z-50 bg-white dark:bg-gray-900 border-b lg:hidden">
+                    <nav className="flex flex-col p-4 space-y-2">
+                        {routes.map((route, index) => (
+                            <Link
+                                key={index}
+                                href={route.href}
+                                onClick={() => setMobileMenuOpen(false)}
+                                className={cn(
+                                    "text-sm font-medium transition-colors hover:text-primary px-3 py-2 rounded-md",
+                                    route.active
+                                        ? "bg-gray-100 dark:bg-gray-800 text-black dark:text-white"
+                                        : "text-muted-foreground"
+                                )}
+                            >
+                                {route.label}
+                            </Link>
+                        ))}
+                    </nav>
+                </div>
+            )}
+        </>
     )
 }

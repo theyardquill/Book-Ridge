@@ -20,7 +20,7 @@ export const PathwayClient: React.FC<PathwayClientProps> = ({
     const params = useParams();
     return (
         <>
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <Heading
                     title={`Pathways (${data?.length})`}
                     description="Manage pathways for your store"/>

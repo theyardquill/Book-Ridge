@@ -89,7 +89,7 @@ export const DurationForm: React.FC<DurationFormProps> = ({ initialData }) => {
             onConfirm={onDelete}
             loading={loading}
             />
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <Heading title={title} description={description} />
                 {initialData && (
                     <Button variant="destructive" size="sm" onClick={() => setOpen(true)} disabled={loading}>
@@ -100,7 +100,7 @@ export const DurationForm: React.FC<DurationFormProps> = ({ initialData }) => {
             <Separator />
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-8">
-                    <div className='grid grid-cols-3 gap-8'>
+                    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'>
                         <FormField
                             control={form.control}
                             name="name"

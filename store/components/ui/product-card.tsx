@@ -1,6 +1,6 @@
 "use client";
 
-import { Product } from "@/types";
+import { Book } from "@/types";
 import Image from "next/image";
 import IconButton from "@/components/ui/icon-button";
 import { Expand, ShoppingCart } from "lucide-react";
@@ -10,10 +10,10 @@ import PreviewModal from './../preview-modal';
 import usePreviewModal from "@/hooks/use-preview-modal";
 import { MouseEventHandler } from 'react';
 import useCart from "@/hooks/use-cart";
-import WhatsAppIcon from "@/components/icons/whatsapp-icon"; // Import your WhatsApp icon
+import WhatsAppIcon from "@/components/icons/whatsapp-icon";
 
 interface ProductCard {
-    data: Product;
+    data: Book;
 }
 
 const ProductCard: React.FC<ProductCard> = ({ data }) => {
@@ -22,7 +22,7 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
     const router = useRouter();
 
     const handleClick = () => {
-        router.push(`/product/${data?.id}`);
+        router.push(`/book/${data?.id}`);
     };
 
     const onPreview: MouseEventHandler<HTMLButtonElement> = (event) => {
@@ -37,11 +37,11 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
 
     const onShareViaWhatsApp: MouseEventHandler<HTMLButtonElement> = (event) => {
         event.stopPropagation();
-        const productUrl = `${window.location.origin}/product/${data?.id}`; // Construct the product URL
-        const message = `Hello, I am interested in this Safari Tour: ${data?.name} (${productUrl}). Could you provide more details?`; // Custom enquiry message
-        const phoneNumber = "+254114633881"; // Recipient's phone number
-        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`; // Create the WhatsApp share link
-        window.open(whatsappUrl, '_blank'); // Open the link in a new tab
+        const productUrl = `${window.location.origin}/book/${data?.id}`;
+        const message = `Hello, I am interested in this book: ${data?.name} (${productUrl}). Could you provide more details?`;
+        const phoneNumber = "+254114633881";
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
     };
 
     return (
@@ -66,7 +66,7 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
                         />
                         <IconButton
                             onClick={onShareViaWhatsApp}
-                            icon={<WhatsAppIcon size={26} className="text-gray-600" />} // Set size to 20
+                            icon={<WhatsAppIcon size={26} className="text-gray-600" />}
                         />
                     </div>
                 </div>
@@ -77,7 +77,7 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
                     {data?.name}
                 </p>
                 <p className="text-sm font-bold text-[#556B2F]">
-                    {data.category.name}
+                    {data.pathway?.name}
                 </p>
             </div>
             {/* Price */}

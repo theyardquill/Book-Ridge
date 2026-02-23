@@ -1,13 +1,13 @@
 "use client";
 
-import { Product } from "@/types";
+import { Book } from "@/types";
 import Currency from "@/components/ui/currency";
 import Button from "@/components/ui/button";
 import { ShoppingCart } from "lucide-react";
 import useCart from "@/hooks/use-cart";
 
 interface InfoProps {
-    data: Product;
+    data: Book;
 }
 
 const Info: React.FC<InfoProps> = ({ data }) => {
@@ -19,7 +19,7 @@ const Info: React.FC<InfoProps> = ({ data }) => {
 
     return (
         <div>
-            {/* Product Name */}
+            {/* Book Name */}
             <h1 className="text-lg font-bold text-[#994C00]">{data.name}</h1>
 
             {/* Price */}
@@ -29,31 +29,42 @@ const Info: React.FC<InfoProps> = ({ data }) => {
                 </span>
             </div>
 
+            {/* Description */}
+            {data.description && (
+                <p className="mt-3 text-sm text-gray-600">{data.description}</p>
+            )}
+
             {/* Divider */}
             <hr className="my-4" />
 
             {/* Details */}
             <div className="flex flex-col gap-y-6">
-                {/* Passengers */}
+                {/* Grade */}
                 <div className="flex items-center gap-x-4">
-                    <h3 className="font-semibold text-black">Number of Passengers</h3>
-                    <div>{data?.size?.value || "N/A"}</div>
+                    <h3 className="font-semibold text-black">Grade</h3>
+                    <div>{data?.grade?.name || "N/A"}</div>
                 </div>
 
-                {/* Vehicle */}
+                {/* Duration */}
                 <div className="flex items-center gap-x-4">
-                    <h3 className="font-semibold text-black">Vehicle:</h3>
-                    <div>{data?.color?.name}</div>
+                    <h3 className="font-semibold text-black">Duration:</h3>
+                    <div>{data?.duration?.name}</div>
+                </div>
+
+                {/* Pathway */}
+                <div className="flex items-center gap-x-4">
+                    <h3 className="font-semibold text-black">Pathway:</h3>
+                    <div>{data?.pathway?.name}</div>
                 </div>
             </div>
 
-            {/* Book Button */}
+            {/* Add to Cart Button */}
             <div className="flex items-center mt-10 gap-x-4">
                 <Button
                     onClick={onAddToCart}
                     className="flex bg-[#556B2F] items-center text-white gap-x-2"
                 >
-                    Book this Package
+                    Add to Cart
                     <ShoppingCart />
                 </Button>
             </div>

@@ -4,20 +4,21 @@ export interface Billboard {
     imageUrl: string;
 }
 
-export interface Category {
+export interface Pathway {
     id: string;
     name: string;
     billboard: Billboard;
 }
 
-export interface Product {
+export interface Book {
     id: string;
-    category: Category;
+    pathway: Pathway;
     name: string;
     price: string;
     isFeatured: boolean;
-    size: Size;
-    color: Color;
+    grade: Grade;
+    duration: Duration;
+    description: string | null;
     images: Image[]
 }
 
@@ -26,12 +27,13 @@ export interface Image {
     url: string;
 }
 
-export interface Size {
+export interface Grade {
     id: string;
     name: string;
     value: string;
 }
-export interface Color {
+
+export interface Duration {
     id: string;
     name: string;
     value: string;
