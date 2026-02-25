@@ -3,7 +3,9 @@ import { useState, useEffect } from 'react';
 
 const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
-    currency: 'USD'
+    currency: 'KES',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
 })
 
 interface CurrencyProps {
