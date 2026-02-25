@@ -10,7 +10,7 @@ const urban = Urbanist({ subsets: ['latin'] });
 
 // Define metadata
 export const metadata: Metadata = {
-  title: 'Cabimah Adventures Limited',
+  title: 'Book Ridge Limited',
   description: 'Easily Book Safaris, Tours and Road Trips',
 };
 

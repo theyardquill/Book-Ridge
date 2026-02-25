@@ -2,13 +2,14 @@ import prismadb from "@/lib/prismadb";
 import { auth } from '@clerk/nextjs/server'
 import { NextResponse } from "next/server"
 
-export async function GET (
+export async function GET(
     req: Request,
-    { params }: { params: Promise<{ pathwayId: string }>}
+    { params }: { params: Promise<{ pathwayId: string }> }
 ) {
     try {
         const { pathwayId } = await params;
-        if(!pathwayId) {
+
+        if (!pathwayId) {
             return new NextResponse("Pathway id is required", { status: 400 });
         }
 
@@ -28,16 +29,17 @@ export async function GET (
     }
 }
 
-export async function PATCH (
+export async function PATCH(
     req: Request,
-    { params }: { params: Promise<{ storeId: string, pathwayId: string }>}
+    { params }: { params: Promise<{ storeId: string, pathwayId: string }> }
 ) {
     try {
         const { userId } = await auth();
         const body = await req.json();
 
-        const { name, billboardId } = body;
         const { storeId, pathwayId } = await params;
+
+        const { name, billboardId } = body;
 
         if (!userId) {
             return new NextResponse("Unauthenticated", { status: 401 })
@@ -48,10 +50,10 @@ export async function PATCH (
         }
 
         if (!billboardId) {
-            return new NextResponse("Billboard URL is required", { status: 400 });
+            return new NextResponse("Billboard id is required", { status: 400 });
         }
 
-        if(!pathwayId) {
+        if (!pathwayId) {
             return new NextResponse("Pathway id is required", { status: 400 });
         }
 
@@ -66,13 +68,13 @@ export async function PATCH (
             return new NextResponse("Unauthorized", { status: 403 });
         }
 
-        const pathway = await prismadb.pathway.update({
+        const pathway = await prismadb.pathway.updateMany({
             where: {
                 id: pathwayId
             },
             data: {
                 name,
-                billboardId,
+                billboardId
             }
         })
 
@@ -83,21 +85,19 @@ export async function PATCH (
     }
 }
 
-//// Delete Method
-
-export async function DELETE (
+export async function DELETE(
     req: Request,
-    { params }: { params: Promise<{ storeId: string, pathwayId: string }>}
+    { params }: { params: Promise<{ storeId: string, pathwayId: string }> }
 ) {
     try {
         const { userId } = await auth();
-        const { storeId, pathwayId } = await params;
+        const { pathwayId, storeId } = await params;
 
         if (!userId) {
             return new NextResponse("Unauthenticated", { status: 401 })
         }
 
-        if(!pathwayId) {
+        if (!pathwayId) {
             return new NextResponse("Pathway id is required", { status: 400 });
         }
 
@@ -112,7 +112,7 @@ export async function DELETE (
             return new NextResponse("Unauthorized", { status: 403 });
         }
 
-        const pathway = await prismadb.pathway.delete({
+        const pathway = await prismadb.pathway.deleteMany({
             where: {
                 id: pathwayId,
             }

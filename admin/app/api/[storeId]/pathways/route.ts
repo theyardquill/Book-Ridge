@@ -70,6 +70,9 @@ export async function GET(
         const pathways = await prismadb.pathway.findMany({
             where: {
                 storeId: storeId
+            },
+            include: {
+                billboard: true
             }
         })
 

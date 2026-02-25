@@ -115,7 +115,11 @@ export async function GET(
             },
             include: {
                 images: true,
-                pathway: true,
+                pathway: {
+                    include: {
+                        billboard: true
+                    }
+                },
                 grade: true,
                 duration: true
             },

@@ -19,9 +19,15 @@ const getBooks = async (query: Query): Promise<Book[]> => {
             durationId: query.durationId,
             isFeatured: query.isFeatured
         }
-    })
-    const res = await fetch(url);
+    });
+
+    const res = await fetch(url, { cache: 'no-store' });
+
+    if (!res.ok) {
+        throw new Error(`Failed to fetch books: ${res.status}`);
+    }
+
     return res.json();
-}
+};
 
 export default getBooks;
