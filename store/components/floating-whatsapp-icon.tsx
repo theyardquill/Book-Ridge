@@ -4,7 +4,7 @@ import WhatsAppIcon from "@/components/icons/floaty-whatsapp-icon"; // Import yo
 
 const FloatingWhatsAppIcon = () => {
   const handleClick = () => {
-    const phoneNumber = "+254114633881"; // Recipient's phone number
+    const phoneNumber = "+254113977338"; // Recipient's phone number
     const message = "Hello, I have an enquiry. Can you assist me?"; // Default message
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`; // Create the WhatsApp share link
     window.open(whatsappUrl, '_blank'); // Open the link in a new tab

@@ -45,12 +45,12 @@ export async function POST(req: Request) {
             }
         });
 
-        const productIds = order.orderItems.map(orderItem => orderItem.productId);
+        const bookIds = order.orderItems.map(orderItem => orderItem.bookId);
 
-        await prismadb.product.updateMany({
+        await prismadb.book.updateMany({
             where: {
                 id: {
-                    in: [...productIds]
+                    in: [...bookIds]
                 },
             },
             data: {

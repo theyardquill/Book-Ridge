@@ -1,26 +1,51 @@
 "use client"
 import { useEffect, useState } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import Container from "@/components/ui/container";
 import useCart from "@/hooks/use-cart";
 import CartItem from "./components/cart-item";
 import Summary from "./components/summary";
+import { CheckCircle } from "lucide-react";
 
 const CartPage = () => {
     const [isMounted, setIsMounted] = useState(false);
+    const [showSuccess, setShowSuccess] = useState(false);
     const cart = useCart();
+    const searchParams = useSearchParams();
+    const router = useRouter();
 
     useEffect(() => {
         setIsMounted(true);
     }, []);
 
+    useEffect(() => {
+        const success = searchParams.get("success");
+        const cancelled = searchParams.get("cancelled");
+
+        if (success === "1") {
+            cart.removeAll();
+            setShowSuccess(true);
+            // Remove query params from URL
+            router.replace("/cart");
+            // Hide success message after 5 seconds
+            setTimeout(() => setShowSuccess(false), 5000);
+        }
+    }, [searchParams, cart, router]);
+
     if(!isMounted) {
         return null
     }
 
-    return ( 
+    return (
         <div className="bg-white">
             <Container>
                 <div className="px-4 py-16 sm:px-6 lg:px-8">
+                    {showSuccess && (
+                        <div className="mb-8 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3">
+                            <CheckCircle className="h-6 w-6 text-green-600" />
+                            <p className="text-green-800 font-medium">Payment successful! Your booking has been confirmed.</p>
+                        </div>
+                    )}
                     <h1 className="text-3xl font-bold text-[#994C00]">Bookings Basket</h1>
                     <div className="mt-12 lg:grid lg:grid-cols-12 lg:items-start gap-x-12">
                         <div className="lg:col-span-7">
@@ -41,5 +66,5 @@ const CartPage = () => {
         </div>
      );
 }
- 
+
 export default CartPage;
