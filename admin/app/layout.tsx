@@ -7,10 +7,22 @@ import { ThemeProvider } from '@/providers/theme-provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
+// Static metadata supported by Next.js App Router
+export const metadata = {
+  title: 'Book Ridge',
+  description: 'Easily Book Safaris',
+};
+
+// Optional viewport (if you want custom settings)
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -24,5 +36,5 @@ export default function RootLayout({
         </ClerkProvider>
       </body>
     </html>
-  );
+  )
 }
