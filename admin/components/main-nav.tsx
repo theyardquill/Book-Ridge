@@ -76,7 +76,8 @@ export function MainNav({ className, ...props } : React.HTMLAttributes<HTMLEleme
 
             {/* Mobile navigation dropdown */}
             {mobileMenuOpen && (
-                <div className="absolute top-16 left-0 right-0 z-50 bg-white dark:bg-gray-900 border-b lg:hidden">
+                <div className="absolute top-16 left-0 right-0 z-50 bg-white dark:bg-gray-900 border-b
+                rounded-b-3xl lg:hidden">
                     <nav className="flex flex-col p-4 space-y-2">
                         {routes.map((route, index) => (
                             <Link
