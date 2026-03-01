@@ -6,15 +6,25 @@ import { Overview } from "@/components/overview";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Heading } from "@/components/ui/heading";
 import { Separator } from "@/components/ui/separator";
-import prismadb from "@/lib/prismadb"
+import prismadb from "@/lib/prismadb";
 import { formatter } from "@/lib/utils";
 import { CreditCard, DollarSign, Package } from "lucide-react";
+import { notFound } from "next/navigation";
 
-const DashboardPage = async ({ params }: { params: Promise<{ storeId: string }> }) => {
-  const { storeId } = await params;
+const DashboardPage = async ({
+  params,
+}: {
+  params: { storeId: string };
+}) => {
+  const { storeId } = params;
+
   const store = await prismadb.store.findFirst({
-    where: { id: storeId }
+    where: { id: storeId },
   });
+
+  if (!store) {
+    notFound();
+  }
 
   const totalRevenue = await getTotalRevenue(storeId);
   const salesCount = await getSalesCount(storeId);
@@ -26,48 +36,46 @@ const DashboardPage = async ({ params }: { params: Promise<{ storeId: string }> 
       <div className="flex-1 p-8 pt-6 space-y-4">
         <Heading title="Dashboard" description="Overview of your store" />
         <Separator />
-        <div className="grid grid-cols-3 gap-4">
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
-              <CardTitle className="text-sm font-medium">
-                Total Revenue
-              </CardTitle>
-              <DollarSign className="w-4 h-4 text-muted-foreground" />
+
+        {/* Cards Section */}
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+
+          <Card className="w-100">
+            <CardHeader className="flex items-center gap-2 pb-2">
+              <DollarSign className="text-muted-foreground w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7" />
+              <CardTitle className="text-sm font-medium">Total Revenue</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">
+              <div className="text-md text-center font-bold">
                 {formatter.format(totalRevenue)}
               </div>
             </CardContent>
           </Card>
+
           <Card>
-            <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
-              <CardTitle className="text-sm font-medium">
-                Sales
-              </CardTitle>
-              <CreditCard className="w-4 h-4 text-muted-foreground" />
+            <CardHeader className="flex items-center gap-2 pb-2">
+              <CreditCard className="text-muted-foreground w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7" />
+              <CardTitle className="text-sm font-medium">Sales</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">
-                +{salesCount}
-              </div>
+              <div className="text-2xl text-center font-bold">+{salesCount}</div>
             </CardContent>
           </Card>
+
           <Card>
-            <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
-              <CardTitle className="text-sm font-medium">
-                Products in Stock
-              </CardTitle>
-              <Package className="w-4 h-4 text-muted-foreground" />
+            <CardHeader className="flex items-center gap-2 pb-2">
+              <Package className="text-muted-foreground w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7" />
+              <CardTitle className="text-sm font-medium">Products in Stock</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">
-                {stockCount}
-              </div>
+              <div className="text-2xl text-center font-bold">{stockCount}</div>
             </CardContent>
           </Card>
+
         </div>
-        <Card className="col-span-4">
+
+        {/* Overview Chart */}
+        <Card>
           <CardHeader>
             <CardTitle>Overview</CardTitle>
           </CardHeader>
@@ -75,9 +83,10 @@ const DashboardPage = async ({ params }: { params: Promise<{ storeId: string }> 
             <Overview data={graphRevenue} />
           </CardContent>
         </Card>
+
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default DashboardPage
+export default DashboardPage;
