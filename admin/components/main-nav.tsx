@@ -14,7 +14,7 @@ export function MainNav({ className, ...props } : React.HTMLAttributes<HTMLEleme
 
     const routes = [{
         href: `/${params.storeId}`,
-        label: 'Overview',
+        label: 'Home',
         active: pathname === `/${params.storeId}`
     }, {
         href: `/${params.storeId}/billboards`,
@@ -48,7 +48,7 @@ export function MainNav({ className, ...props } : React.HTMLAttributes<HTMLEleme
 
     return (
         <>
-            {/* Mobile menu button */}
+            {/* Mobile menu toggle */}
             <Button
                 variant="ghost"
                 size="icon"
@@ -65,8 +65,11 @@ export function MainNav({ className, ...props } : React.HTMLAttributes<HTMLEleme
                         key={index}
                         href={route.href}
                         className={cn(
-                            "text-sm font-medium transition-colors hover:text-primary",
-                            route.active ? "text-black dark:text-white" : "text-muted-foreground"
+                            "text-sm font-medium px-3 py-2 rounded-lg transition-colors",
+                            "hover:bg-primary/10 hover:text-primary active:bg-primary/20 active:text-primary",
+                            route.active
+                                ? "bg-primary/20 text-primary border border-primary"
+                                : "text-muted-foreground"
                         )}
                     >
                         {route.label}
@@ -76,8 +79,7 @@ export function MainNav({ className, ...props } : React.HTMLAttributes<HTMLEleme
 
             {/* Mobile navigation dropdown */}
             {mobileMenuOpen && (
-                <div className="absolute top-16 left-0 right-0 z-50 bg-white dark:bg-gray-900 border-b
-                rounded-b-3xl lg:hidden">
+                <div className="absolute top-16 left-0 right-0 z-50 bg-white dark:bg-gray-900 border-b rounded-b-3xl lg:hidden">
                     <nav className="flex flex-col p-4 space-y-2">
                         {routes.map((route, index) => (
                             <Link
@@ -85,9 +87,10 @@ export function MainNav({ className, ...props } : React.HTMLAttributes<HTMLEleme
                                 href={route.href}
                                 onClick={() => setMobileMenuOpen(false)}
                                 className={cn(
-                                    "text-sm font-medium transition-colors hover:text-primary px-3 py-2 rounded-md",
+                                    "text-sm font-medium px-3 py-2 rounded-lg transition-colors",
+                                    "hover:bg-primary/10 hover:text-primary active:bg-primary/20 active:text-primary",
                                     route.active
-                                        ? "bg-gray-100 dark:bg-gray-800 text-black dark:text-white"
+                                        ? "bg-primary/20 text-primary border border-primary"
                                         : "text-muted-foreground"
                                 )}
                             >
@@ -98,5 +101,5 @@ export function MainNav({ className, ...props } : React.HTMLAttributes<HTMLEleme
                 </div>
             )}
         </>
-    )
+    );
 }

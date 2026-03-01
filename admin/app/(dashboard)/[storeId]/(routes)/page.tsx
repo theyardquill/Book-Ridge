@@ -34,41 +34,57 @@ const DashboardPage = async ({
   return (
     <div className="flex-col">
       <div className="flex-1 p-8 pt-6 space-y-4">
-        <Heading title="Dashboard" description="Overview of your store" />
+
+        {/* Centered Dashboard Heading */}
+        <div className="text-center">
+          <Heading title="Bookridge Dashboard" description="Manage  Your Store" />
+        </div>
+
         <Separator />
 
-        {/* Cards Section */}
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        {/* Cards Section Stack on Phone, Grid on md */}
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 text-center">
 
-          <Card className="w-100">
-            <CardHeader className="flex items-center gap-2 pb-2">
-              <DollarSign className="text-muted-foreground w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7" />
-              <CardTitle className="text-sm font-medium">Total Revenue</CardTitle>
+          {/* Total Revenue Card */}
+          <Card>
+            <CardHeader className="flex flex-col items-center gap-1 pb-2">
+              <DollarSign className="text-primary-500 w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12" />
+              <CardTitle className="text-sm font-medium">
+                Total Revenue
+              </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-md text-center font-bold">
+              <div className="text-lg md:text-xl font-bold">
                 {formatter.format(totalRevenue)}
               </div>
             </CardContent>
           </Card>
 
+          {/* Sales Card */}
           <Card>
-            <CardHeader className="flex items-center gap-2 pb-2">
-              <CreditCard className="text-muted-foreground w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7" />
+            <CardHeader className="flex flex-col items-center gap-1 pb-2">
+              <CreditCard className="text-primary-500 w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12" />
               <CardTitle className="text-sm font-medium">Sales</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl text-center font-bold">+{salesCount}</div>
+              <div className="text-lg md:text-xl font-bold">
+                +{salesCount}
+              </div>
             </CardContent>
           </Card>
 
+          {/* Stock Card */}
           <Card>
-            <CardHeader className="flex items-center gap-2 pb-2">
-              <Package className="text-muted-foreground w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7" />
-              <CardTitle className="text-sm font-medium">Products in Stock</CardTitle>
+            <CardHeader className="flex flex-col items-center gap-1 pb-2">
+              <Package className="text-primary-500 w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12" />
+              <CardTitle className="text-sm font-medium">
+                Products in Stock
+              </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl text-center font-bold">{stockCount}</div>
+              <div className="text-lg md:text-xl font-bold">
+                {stockCount}
+              </div>
             </CardContent>
           </Card>
 
