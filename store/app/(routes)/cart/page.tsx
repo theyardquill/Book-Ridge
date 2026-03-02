@@ -44,18 +44,18 @@ const CartPage = () => {
             <div className="mb-8 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3">
               <CheckCircle className="h-6 w-6 text-green-600" />
               <p className="text-green-800 font-medium">
-                Payment successful! Your booking has been confirmed.
+                Payment successful! Your order has been confirmed.
               </p>
             </div>
           )}
           <h1 className="text-3xl font-bold text-[#994C00]">
-            Bookings Basket
+            Book Basket
           </h1>
           <div className="mt-12 lg:grid lg:grid-cols-12 lg:items-start gap-x-12">
             <div className="lg:col-span-7">
               {cart?.items?.length === 0 && (
                 <p className="text-neutral-500">
-                  You Currently Have no Booking. Explore our Packages to Book a Safari.
+                  You Currently Have no Books in your Basket. Explore our Catalogue to Borrow a Book.
                 </p>
               )}
               <ul>
