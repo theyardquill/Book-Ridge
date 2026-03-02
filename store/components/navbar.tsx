@@ -20,12 +20,12 @@ const Navbar = async () => {
                         <Image
                         src="/Logo.png" // Path to your logo
                         alt="Book Ridge Logo"
-                        width={120} // Base width
-                        height={120} // Base height
+                        width={150} // Base width
+                        height={200} // Base height
                         className="w-16 h-16 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-18 lg:h-18" // Responsive sizes
                     />
 
-                        <p className="text-md md:text-lg lg:text-xl -ml-12 -mr-12 font-bold">Book Ridge</p>
+                        
                     </Link>
 
                     {/* Navigation Links */}
